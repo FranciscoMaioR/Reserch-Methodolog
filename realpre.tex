@@ -57,62 +57,10 @@
 
 % ---- Course guide packages ----
 \usepackage[most]{tcolorbox}          % snapshot cards and checklist boxes
-\usepackage{imakeidx}                 % index generation (fast paper lookup)
+\usepackage{imakeidx}                 % index generation
 \makeindex[columns=2, title=Index, intoc]
-\usepackage{titlesec}                 % custom chapter/section heading colors
-\usepackage{pdfpages}                 % full-page PNG inserts
-
-\input{chapters/macros}
-
-% ---- Heading colors (course scheme; colors defined in macros.tex) ----
-\titleformat{\chapter}[display]
-  {\normalfont\huge\bfseries\color{integblue}}
-  {\chaptertitlename\ \thechapter}{12pt}{\Huge}
-
-\titleformat{\section}
-  {\normalfont\Large\bfseries\color{black!80}}{\thesection}{1em}{}
-
-\titleformat{\subsection}
-  {\normalfont\large\bfseries\color{black!70}}{\thesubsection}{1em}{}
-
-\renewcommand{\figurename}{Fig.}
-\renewcommand{\baselinestretch}{1.04}
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt plus 2pt minus 1pt}
-
+\usepackage[toc, acronym]{glossaries} % glossary
+\makeglossar\input{chapters/macros}
 \begin{document}
-\subfile{header}
-\newpage
-\pagenumbering{roman}
-{\setstretch{1.0}\tableofcontents}
-\newpage
-\pagenumbering{arabic}
-\setcounter{page}{1}
-
-% ===== Front matter =====
-\subfile{chapters/00_how_to_use}     % How to use this guide
-\subfile{chapters/_coursemap}        % Course map (Overview.png orientation page)
-
-% ===== Weekly reference (four-layer structure) =====
-\subfile{chapters/01_week1}
-\subfile{chapters/02_week2}
-\subfile{chapters/03_week3}
-\subfile{chapters/04_week4}
-\subfile{chapters/05_week5}
-\subfile{chapters/06_week6}
-
-% ===== Synthesis =====
-\subfile{chapters/07_crossweek}      % Cross-week concept threads
-\subfile{chapters/08_report_guide}   % Report writing guide
-
-% ===== Appendices =====
-\begin{appendices}
-  \subfile{chapters/A_checklists}
-  \subfile{chapters/B_glossary}      % hand-built static glossary list
-\end{appendices}
-
-\printindex
-
-\bibliographystyle{unsrt}
-\bibliography{refs}
+hi
 \end{document}

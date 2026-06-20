@@ -12,3 +12,40 @@
 \usepackage{mdframed}
 \newmdenv[linecolor=istblue,linewidth=0.8pt,backgroundcolor=black!2,innertopmargin=6pt,innerbottommargin=6pt,skipabove=8pt,skipbelow=8pt,roundcorner=3pt]{keybox}
 \newcommand{\keyhead}[1]{\textbf{\textcolor{istblue}{#1}}\par\vspace{2pt}}
+
+% ============================================================
+%  Course guide additions (Research Methodology content guide)
+% ============================================================
+
+%% ---- Course color scheme (matches PNG connection diagrams) ----
+\definecolor{conceptgreen}{HTML}{70AD47}   % conceptual track (green nodes)
+\definecolor{empiricred}{HTML}{FF6B6B}     % empirical track (red/pink nodes)
+\definecolor{integblue}{HTML}{5B9BD5}      % integrative/output topics (blue-grey)
+\definecolor{snapbg}{HTML}{F2F2F2}         % snapshot card background
+
+%% ---- \keyterm{word} -- bold + add to index ----
+\newcommand{\keyterm}[1]{\textbf{#1}\index{#1}}
+
+%% ---- Snapshot card (Layer 1): colored tcolorbox per track type ----
+%% Usage: \begin{snapcard}{conceptgreen}{Week N title}{connects from}{connects to}
+\newtcolorbox{snapcard}[4]{
+  colback=snapbg, colframe=#1, fonttitle=\bfseries\large,
+  title={#2},
+  before upper={\textbf{Connects from:} #3\quad\textbf{$\rightarrow$}\quad\textbf{Connects to:} #4\\[4pt]},
+  boxrule=1.2pt, rounded corners, left=6pt, right=6pt
+}
+
+%% ---- Part summary box (Layer 2) ----
+\newmdenv[linecolor=istblue, linewidth=0.5pt, backgroundcolor=black!3,
+  innertopmargin=5pt, innerbottommargin=5pt, skipabove=6pt, skipbelow=4pt,
+  roundcorner=2pt]{partbox}
+
+%% ---- Checklist box for appendix ----
+\newtcolorbox{checklistbox}[1]{
+  colback=white, colframe=istblue, fonttitle=\bfseries,
+  title={#1}, boxrule=1pt, rounded corners
+}
+
+%% ---- Hand-built glossary entry (Appendix B) ----
+%% Use inside a description list: \glentry{term}{definition (see \autoref{...}).}
+\newcommand{\glentry}[2]{\item[\textnormal{\textbf{#1}}] #2}

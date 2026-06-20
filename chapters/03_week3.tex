@@ -1,0 +1,112 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+
+\chapter{Week 3 — Research Material and Data}
+\label{ch:week3}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{week3.png}
+\end{figure}
+
+\begin{snapcard}{empiricred}{Week 3 — Research Material and Data}{Steps of a research project (\autoref{ch:week1})}{Verification and validation, sustainable research (\autoref{ch:week4}), data management (\autoref{ch:week5})}
+\begin{itemize}
+  \item The population is the entire collection in the field, and the sample is the representative subset that is actually studied.
+  \item The sampling method narrows from the theoretical population, through the study population and the sampling frame, to the sample.
+  \item Probability sampling supports generalisation to the population, while non-probability sampling never can and must say so explicitly.
+  \item The standard error measures the precision of a sample, falling as the sample size grows and as the standard deviation shrinks.
+  \item Data is qualitative or quantitative, and its type follows from the strategy, the materials, and the defined variables.
+  \item Data quality must be checked before analysis, and a detailed research logbook is what makes the whole project traceable.
+\end{itemize}
+\end{snapcard}
+
+\section{Part 1 — Population, Sample, and the Sampling Method}
+\label{sec:sampling}
+
+\begin{partbox}
+This part makes the sample step of Week~1 (\autoref{sec:research-process}) precise by separating the population from the sample and showing how one narrows to the other. It matters because representativeness is what licenses any statement about the population, and the inductive leap from sample to population is exactly the risk flagged in the hourglass (\autoref{sec:hourglass}). The four-stage funnel given here names where access and listing constraints quietly shrink the reachable population. Read \autoref{sec:sampling} to see why a conclusion is only ever as broad as the sample allows.
+\end{partbox}
+
+\subsection{Content}
+\begin{itemize}
+  \item The \keyterm{population} is the entire collection of things in the field, the entirety of the problem, and it is too large to study whole.
+  \item The \keyterm{sample} is the chosen subset of the population that is actually studied.
+  \item A representative sample is a cross-section that allows generic statements over the population, and representativeness must be proven statistically with required sample sizes.
+  \item If the sample is not representative, conclusions hold only for the studied sample and not for the whole population.
+  \item The \keyterm{sampling method} narrows in stages, beginning with the \keyterm{theoretical population}, the group to which the study wants to generalise.
+  \item It continues to the \keyterm{study population}, the part that can actually be accessed, and the \keyterm{sampling frame}, the means of listing and reaching them.
+  \item It ends with the \keyterm{sample}, the units that are actually in the study.
+\end{itemize}
+
+\subsection{Explanation}
+The population and the sample are separated so that the scope of a conclusion is never left implicit. The population is the whole problem restated as a collection, which is by definition too large to study, so the sample is not a compromise but a necessity. What makes a sample useful is representativeness, and the course is firm that this is a statistical property to be demonstrated rather than assumed, complete with a required size. When representativeness fails, the work is not worthless, but its conclusions contract to cover only the sample studied, which is the disciplined form of the inductive caution from Week~1.
+
+The four-stage funnel is the most practical idea in the part, because it shows that the sample is the survivor of several successive narrowings. The theoretical population is the ideal target of generalisation, the study population is the portion that is actually reachable, and the sampling frame is the concrete list or mechanism through which units are drawn. Each stage can lose coverage that the researcher never intended to drop, so the gap between the theoretical population and the final sample is where hidden bias accumulates. Naming the stages makes that gap visible and forces an honest statement of who the conclusions really describe.
+
+\section{Part 2 — Types of Samples and Standard Error}
+\label{sec:sample-types}
+
+\begin{partbox}
+This part classifies sampling into probability and non-probability methods and introduces the standard error as the measure of a sample's precision. It matters because the probability boundary is the same boundary as generalisability, so the sampling choice decides in advance what the study can claim. The standard error then quantifies how tightly the sample estimates the population, with two levers that reappear in the resource questions of Week~4 (\autoref{sec:eop}). Read \autoref{sec:sample-types} to match a sampling method to the kind of conclusion it can support.
+\end{partbox}
+
+\subsection{Content}
+\begin{itemize}
+  \item \keyterm{Probability sampling} means every element has a known probability of selection.
+  \item \keyterm{Simple random sampling} draws so that every element is known and every possible sample has an equal chance of being selected.
+  \item \keyterm{Complex probability sampling} improves efficiency by dropping the equal-chance requirement while keeping known probabilities.
+  \item Its forms include systematic random sampling, taking every nth element from a random start, and cluster random sampling, selecting whole groups then sampling within them.
+  \item Multi-stage random sampling reiterates the sampling method within an already drawn sample.
+  \item \keyterm{Non-probability sampling} covers convenience and purposive sampling, neither of which can be assumed representative.
+  \item \keyterm{Convenience sampling} selects the sample because it is available, and this must be stated explicitly.
+  \item \keyterm{Purposive sampling} selects the sample because it holds desired information, for reasons such as expert advice, a needed quota, heterogeneity, or a snowball effect.
+  \item The \keyterm{standard error} is the precision of the statistical sample and is calculated from the \keyterm{standard deviation}.
+  \item The standard deviation is the spread of scores around their average in a single sample, the square root of the variance, in the same units as the measure.
+  \item A greater standard deviation gives a greater error, and a greater sample size gives a smaller error.
+\end{itemize}
+
+\subsection{Explanation}
+The division between probability and non-probability sampling is the operational version of the representativeness rule from the previous part. When every element has a known chance of selection, the mathematics of generalisation applies and the sample can stand in for the population, which is why simple and complex probability designs are the only ones that support statistical inference. Complex designs trade the simplicity of equal chances for efficiency, using structure such as clusters or stages to reach the same population at lower cost, while keeping the probabilities known. Non-probability designs abandon known probabilities entirely, so convenience and purposive sampling are explicitly barred from claiming to represent the population, and the course requires that this limitation be declared rather than hidden.
+
+The standard error gives a number to the precision that representativeness only described in words. It is built from the standard deviation, which captures how spread out a single sample is, and it translates that spread into how reliably the sample estimates the population. The two stated levers are the whole practical content, since a larger spread inflates the error and a larger sample shrinks it toward the full-population value. This is the formal reason a study cannot buy precision for free, because driving the error down means collecting more data, which is exactly the cost and sample-size trade-off that sustainable research forces the researcher to justify in Week~4 (\autoref{sec:eop}).
+
+\section{Part 3 — Data Sources, Quality, and the Logbook}
+\label{sec:data-sources}
+
+\begin{partbox}
+This part covers where data comes from, the legal categories that constrain it, the qualitative and quantitative split, and the quality checks and logbook that protect it. It matters because the data rules are hard gates, GDPR for personal data and a knowledge embargo for protected fields, that can stop a project before it starts. The logbook introduced here is the practical instrument behind the traceability demanded by ethics (\autoref{sec:ethics}) and the full data management plan of Week~5 (\autoref{sec:dmp}). Read \autoref{sec:data-sources} as the rules and habits that keep data usable and legal.
+\end{partbox}
+
+\subsection{Content}
+\begin{itemize}
+  \item Data sources are someone else's data, theoretical data, simulated data, and experimental data from testing, surveying, or observing.
+  \item \keyterm{Personal data} is any data traceable directly or indirectly to a natural person, and it falls under the General Data Protection Regulation (GDPR).
+  \item Commercially sensitive data arises in company theses, and no NDA or contract should be signed before the university gives legal advice.
+  \item \keyterm{Protected data} covers nuclear-weapons and missile-technology knowledge, which the UN and EU require be controlled through a knowledge-embargo exemption.
+  \item \keyterm{Qualitative data} is collected by observation of an environment, such as text, photos, and people.
+  \item \keyterm{Quantitative data} is the numerical result of measured or simulated variables, such as wind-tunnel data, finite-element results, and surveys.
+  \item The data type follows from the research strategy, the research material, and the defined variables, and one type can sometimes be converted to the other.
+  \item \keyterm{Data quality} checks, run before analysis, look for typing errors, outliers, coding errors, and whether the data meets expectations.
+  \item The \keyterm{research logbook} records design choices, assumptions, how experiments were run, incidents, file locations, file names and changes, and people consulted.
+\end{itemize}
+
+\subsection{Explanation}
+The four data sources line up with the four forms of measurement from Week~1, so the choice of source is really a continuation of the design decision made earlier. The legal categories then impose constraints that are independent of the science and cannot be negotiated away within the project. Personal data triggers the full weight of the GDPR and ties back to the human-subject gate of Week~2, commercially sensitive data turns a signature into a legal risk that must be cleared first, and protected data in fields such as hypersonics or re-entry requires an embargo exemption that takes real calendar time. Treating these as planning constraints rather than afterthoughts is the difference between a feasible project and one that stalls on paperwork.
+
+The qualitative and quantitative split is presented as a consequence rather than a free choice, since the type of data is determined by the strategy, the materials, and the variables already fixed in the design. The note that data can be converted between the two, and that qualitative data can be summarised numerically, echoes the Week~1 point about attributes and keeps the boundary from being treated as rigid. Data quality is the gate immediately before analysis, and its checks exist because processing bad data produces confident wrong answers. The logbook is the instrument that makes all of this defensible, since a detailed record of choices, assumptions, incidents, and file histories is what allows the work to be reconstructed, which is the same traceability that ethics demands and that the data management plan of Week~5 formalises into a system.
+
+\section{Reading Material}
+
+\begin{partbox}
+The Week~3 reading is the TU Delft Data Usage and Storage Rules, which turn the brief data-rules slide into concrete obligations. Where the slide names the three categories, the reading specifies the procedures, the contacts, and the storage requirements that compliance actually demands.
+\end{partbox}
+
+\begin{itemize}
+  \item Personal data requires checking the HREC guidelines, collecting as little as possible, and taking special care with special categories such as race, religion, or health.
+  \item Personal data must be stored in a secure database such as DANS and kept within the EU, since services like Google and Dropbox store data outside it and need extra measures.
+  \item Personal data must be deleted or anonymised when no longer needed and anonymised as far as possible when publishing, with suspected leaks reported to the faculty data steward.
+  \item Commercially sensitive data must follow the company's standards and be checked against the TU Delft open-access policy before anything is signed.
+  \item Protected fields such as hypersonic aerodynamics, re-entry technology, guidance and navigation control, and launch and payload structures need a knowledge-embargo exemption that can take up to three months.
+\end{itemize}
+
+\end{document}
