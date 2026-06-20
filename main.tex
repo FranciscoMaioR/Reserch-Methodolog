@@ -1,5 +1,5 @@
 % ==============================================================
-%  AE4262 Combustion for Propulsion & Power Technologies
+%  Research Methodology
 %  Course Content Guide  -- Francisco Maio Rodrigues (6425704)
 % ==============================================================
 \documentclass[11pt]{report}
@@ -11,7 +11,7 @@
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\footnotesize TU Delft}
-\fancyhead[R]{\footnotesize AE4262 -- Combustion for P\&P}
+\fancyhead[R]{\footnotesize Research Methodology}
 \fancyfoot[L]{\footnotesize Course Content Guide}
 \fancyfoot[C]{\thepage}
 \fancyfoot[R]{\footnotesize Q4 2026}
@@ -49,10 +49,6 @@
 \usepackage{cite}
 \usepackage[nottoc,numbib]{tocbibind}
 
-\usepackage{nomencl}
-\makenomenclature
-\setlength{\nomlabelwidth}{2.2cm}
-
 \usepackage{setspace}
 \usepackage{subfiles}
 \usepackage{etoolbox}
@@ -71,26 +67,10 @@
 \pagenumbering{roman}
 {\setstretch{1.0}\tableofcontents}
 \newpage
-\input{chapters/nomenclature}
-\printnomenclature
-\newpage
 \pagenumbering{arabic}
 \setcounter{page}{1}
 
-\input{chapters/00-preface}
-\input{chapters/01-introduction}
-\input{chapters/02-thermodynamics}
-\input{chapters/03-kinetics}
-\input{chapters/04-governing-equations}
-\input{chapters/05-laminar-premixed}
-\input{chapters/06-laminar-nonpremixed}
-\input{chapters/07-stretch-instabilities}
-\input{chapters/08-turbulence}
-\input{chapters/09-turbulent-combustion}
-\input{chapters/10-diagnostics}
-\input{chapters/11-emissions}
-\input{chapters/12-practical-combustors}
-\input{chapters/13-hydrogen}
+% \input{chapters/01-introduction}
 
 \bibliographystyle{unsrt}
 \bibliography{refs}

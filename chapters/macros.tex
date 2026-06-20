@@ -1,49 +1,14 @@
-% ----- Shared macros for the AE4262 Combustion guide -----
-% Lightweight chemistry: \ch{CO_2}; reactions in math with \rightarrow / \rightleftharpoons
-\newcommand{\ch}[1]{\ensuremath{\mathrm{#1}}}
-
-% --- Minimal siunitx-style shim (project avoids the siunitx dependency) ---
-\newcommand{\SI}[2]{\ensuremath{#1\,\mathrm{#2}}}
-\newcommand{\si}[1]{\ensuremath{\mathrm{#1}}}
-\newcommand{\SIrange}[3]{\ensuremath{#1\text{--}#2\,\mathrm{#3}}}
-\newcommand{\numrange}[2]{\ensuremath{#1\text{--}#2}}
-\newcommand{\num}[1]{\ensuremath{#1}}
-\newcommand{\percent}{\%}
-\newcommand{\micro}{\mu}
-\newcommand{\tonne}{t}
-\newcommand{\degree}{^{\circ}}
-\newcommand{\celsius}{{}^{\circ}\mathrm{C}}
-\newcommand{\kelvin}{\mathrm{K}}
+% ----- Shared macros -----
 
 % Calculus / operators
 \newcommand{\dd}{\mathrm{d}}
 \newcommand{\pder}[2]{\frac{\partial #1}{\partial #2}}
 \newcommand{\tder}[2]{\frac{\dd #1}{\dd #2}}
-\newcommand{\DDt}[1]{\frac{\mathrm{D} #1}{\mathrm{D} t}}
 \newcommand{\avg}[1]{\overline{#1}}
-\newcommand{\favg}[1]{\widetilde{#1}}
-\newcommand{\fluc}[1]{#1^{\prime}}
-\newcommand{\ffluc}[1]{#1^{\prime\prime}}
 \newcommand{\vv}[1]{\boldsymbol{#1}}
 \newcommand{\grad}{\boldsymbol{\nabla}}
-\newcommand{\divv}{\grad\!\cdot\!}
-\newcommand{\sLz}{s_L^{0}}
-\newcommand{\sLstr}{s_L}
-\newcommand{\sT}{s_T}
-\newcommand{\dL}{\delta_L^{0}}
-\newcommand{\Tad}{T_{\mathrm{ad}}}
-\newcommand{\Zst}{Z_{\mathrm{st}}}
-
-\newcommand{\Le}{\mathrm{Le}}
-\newcommand{\Pran}{\mathrm{Pr}}
-\newcommand{\Sc}{\mathrm{Sc}}
-\newcommand{\Da}{\mathrm{Da}}
-\newcommand{\Ka}{\mathrm{Ka}}
-\newcommand{\Rey}{\mathrm{Re}}
-\newcommand{\Ret}{\mathrm{Re}_t}
 
 \definecolor{istblue}{RGB}{3,171,230}
-\definecolor{dkgreen}{rgb}{0,0.6,0}
 \usepackage{mdframed}
 \newmdenv[linecolor=istblue,linewidth=0.8pt,backgroundcolor=black!2,innertopmargin=6pt,innerbottommargin=6pt,skipabove=8pt,skipbelow=8pt,roundcorner=3pt]{keybox}
 \newcommand{\keyhead}[1]{\textbf{\textcolor{istblue}{#1}}\par\vspace{2pt}}
