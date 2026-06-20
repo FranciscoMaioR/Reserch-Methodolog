@@ -1,0 +1,74 @@
+\chapter{Chemical Kinetics}\label{ch:kinetics}
+
+Equilibrium tells us the destination of a reacting mixture but nothing about the journey. Chemical kinetics --- the study of reaction rates and their governing factors --- is the third and finest level of analysis (Section~\ref{ch:intro}), needed whenever a chemical time scale becomes comparable to a flow, residence or diffusion time~\cite{lecture3}. This chapter builds the rate laws from collision theory, assembles them into a mechanism using the hydrogen--oxygen system as the worked example, and uses the result to understand auto-ignition, explosion limits and ignition delay.
+
+\section{When does finite-rate chemistry matter?}
+
+The lecture frames the three levels as a hierarchy of questions~\cite{lecture3}. An enthalpy/heat balance is enough if only the heat release matters; equilibrium adds the influence of pressure and composition on the products; kinetics is required when the influence of pressure, temperature and \emph{time} together becomes important --- pre-eminently for emissions. The assumption of infinitely fast chemistry over-predicts the conversion of ``slow'' species such as \ch{NO}; in fact the equilibrium assumption is reasonable only for hydrogen diffusion flames (and only if the nitrogen chemistry is ignored)~\cite{lecture3}. To capture the correct time scales one must account for the forward and backward chemical rates explicitly, which is the business of kinetics~\cite{lecture3}. Concretely, kinetics governs ignition and extinction, emission formation, and the response to parametric changes such as exhaust-gas recirculation or small shifts in equivalence ratio --- precisely the situations where chemistry, rather than turbulence, becomes the rate-limiting physics~\cite{lecture3}.
+
+\section{The reaction rate and the law of mass action}
+
+The rate of a reaction is the speed of production of a product or destruction of a reactant; the net effect on a species, which may be produced in one reaction and consumed in another, is written $\partial Y_k/\partial t=\dot\omega_k$~\cite{lecture3}. The rate depends on the concentrations of the species, the temperature, the pressure, and the presence of catalysts, inhibitors or radiation~\cite{lecture3}. For an elementary reaction --- one that proceeds exactly as written, with a definite number of bonds broken and formed --- the rate is proportional to the product of the reactant concentrations raised to their stoichiometric coefficients, the \textbf{law of mass action}. For a reaction $j$ of the general reversible form $\sum_k\nu'_{k,j}\,\mathcal{M}_k\rightleftharpoons\sum_k\nu''_{k,j}\,\mathcal{M}_k$ the net molar rate of progress is
+\begin{equation}
+Q_j=K_{f,j}\prod_{k=1}^{N}[X_k]^{\nu'_{k,j}}-K_{r,j}\prod_{k=1}^{N}[X_k]^{\nu''_{k,j}},\qquad
+\dot\omega_k=W_k\sum_{j=1}^{M}\nu_{k,j}\,Q_j,
+\label{eq:rate-of-progress}
+\end{equation}
+where $\nu_{k,j}=\nu''_{k,j}-\nu'_{k,j}$ and the sum over $j$ accounts for every reaction in which species $k$ participates~\cite{lecture3,warnatz2006combustion}. The \textbf{reaction order} is the sum of the concentration exponents; the integrated rate laws for first-, second- and third-order decay (logarithmic, reciprocal and reciprocal-squared in concentration, respectively) are the standard textbook forms used to fit measured rate data~\cite{lecture3}.
+
+The connection to Chapter~\ref{ch:thermo} is immediate: at equilibrium the forward and backward rates of every reaction balance, $Q_j=0$, which forces $K_{f,j}/K_{r,j}=K_{c,j}=\prod_k[X_{k}]_e^{\nu_{k,j}}$ --- the kinetic origin of the equilibrium constant, with $K_p=K_c\,(R_0T)^{\Delta\nu}$ as before~\cite{lecture3}. Thus a thermodynamically consistent mechanism need only specify the forward rates and the thermochemistry; the reverse rates follow.
+
+\section{Collision theory and the Arrhenius law}
+
+Why does a rate coefficient take the form it does? A reaction between two molecules requires them to collide, but collision is necessary, not sufficient: in an \ch{H_2}/\ch{I_2} mixture the molecules undergo of order $10^{10}$ collisions per second, yet only about one in $10^{13}$ leads to reaction~\cite{lecture3}. Two further conditions must be met. First, the colliding molecules must be correctly \emph{oriented}, captured by a steric factor $S<1$. Second, they must carry at least a threshold \textbf{activation energy} $E_a$: as Arrhenius proposed in 1888, the collision's kinetic energy must be sufficient to stretch, bend and ultimately break bonds, raising the molecules over the energy barrier of the transition state~\cite{lecture3}. By the Boltzmann distribution the fraction of molecules with energy at least $E_a$ is $f=\exp(-E_a/R_0T)$, which rises steeply with temperature and is the origin of the strong temperature sensitivity of combustion~\cite{lecture3}.
+
+Combining the three factors, the rate is proportional to the collision frequency $Z_{AB}$, the steric factor $S$ and the Boltzmann fraction. Kinetic theory gives $Z_{AB}\propto X_A X_B\,\sigma_{AB}^2\sqrt{8k_BT/m_R}$ (with $\sigma_{AB}$ the mean collision diameter and $m_R$ the reduced mass), so that the rate coefficient collapses to the \textbf{modified Arrhenius form}
+\begin{equation}
+K_j(T)=A_j\,T^{\beta_j}\exp\!\left(-\frac{E_{a,j}}{R_0 T}\right),
+\label{eq:arrhenius}
+\end{equation}
+where $A_j$ is the pre-exponential (frequency) factor, $\beta_j$ a small temperature exponent absorbing the $\sqrt{T}$ collision dependence and other weak effects, and $E_{a,j}$ the activation energy~\cite{lecture3,glassman2014combustion}. A catalyst acts by lowering $E_a$ (offering an alternative path over a lower barrier), which is why even trace third bodies can change a rate dramatically~\cite{lecture3}.
+
+\section{Elementary reactions, radicals and the construction of a mechanism}
+
+Real combustion does not proceed by the global reaction $\ch{CH_4}+2\ch{O_2}\rightarrow\ch{CO_2}+2\ch{H_2O}$, which would require an improbably simultaneous rearrangement of many bonds; it proceeds through a long chain of \emph{elementary} steps involving highly reactive \textbf{radicals} (\ch{H}, \ch{O}, \ch{OH}, \ch{HO_2}, \dots)~\cite{lecture3}. Building a mechanism is a systematic procedure, illustrated in the lecture for the hydrogen--oxygen system, $2\ch{H_2}+\ch{O_2}+3.76\ch{N_2}\rightleftharpoons2\ch{H_2O}+3.76\ch{N_2}$~\cite{lecture3,warnatz2006combustion}:
+\begin{enumerate}[leftmargin=2em,itemsep=2pt]
+\item \textbf{Identify the possible species:} \ch{H_2}, \ch{O_2}, \ch{H_2O}, \ch{O}, \ch{H}, \ch{OH}, \ch{HO_2}, \ch{H_2O_2} and a third body \ch{M}. Only \ch{H_2} and \ch{O_2} are stable reactants (\ch{H_2O} is a product, \ch{H_2O_2} is unstable); the rest are radicals.
+\item \textbf{Find the elementary reactions.} Radicals have low activation energies and so are far more reactive than stable species, while reactions \emph{between} radicals are slow because a third body \ch{M} is needed to carry off the excess energy and stabilise the product. Applying these rules generates the bimolecular branching/propagation steps and the three-body recombination steps.
+\item \textbf{Find the routes} via a flux (reaction-path) diagram, tracing how a radical such as \ch{H} is regenerated and multiplied.
+\item \textbf{Assemble the net rate} of a chosen species by summing over all the steps as in Eq.~\eqref{eq:rate-of-progress}.
+\end{enumerate}
+The key elementary steps for hydrogen are the chain-\textbf{branching} reactions
+\begin{equation}
+\ch{H}+\ch{O_2}\rightarrow\ch{OH}+\ch{O},\qquad
+\ch{O}+\ch{H_2}\rightarrow\ch{OH}+\ch{H},\qquad
+\ch{OH}+\ch{H_2}\rightarrow\ch{H_2O}+\ch{H},
+\label{eq:h2-branching}
+\end{equation}
+of which the first is decisive: a single radical (\ch{H}) produces two (\ch{OH} and \ch{O}), so the radical pool can grow exponentially~\cite{lecture3}. Competing with branching are the three-body \textbf{recombination/termination} steps such as $\ch{H}+\ch{O_2}+\ch{M}\rightarrow\ch{HO_2}+\ch{M}$ and $\ch{H}+\ch{H}+\ch{M}\rightarrow\ch{H_2}+\ch{M}$, which remove radicals and are favoured at high pressure (more frequent three-body collisions), together with the \ch{H_2O_2} chemistry $\ch{H_2O_2}+\ch{M}\rightarrow2\ch{OH}+\ch{M}$ that re-supplies radicals at high pressure~\cite{lecture3}. Whether the radical population grows or decays --- and hence whether the mixture ignites --- is the outcome of this competition, which depends sensitively on pressure and temperature.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.58\linewidth]{fig_h2o2_flux}
+\caption{Reaction-path (flux) diagram for the hydrogen--oxygen system, showing the chain-branching and three-body routes that decide whether the radical pool grows~\cite{lecture3}.}
+\label{fig:fig_h2o2_flux}
+\end{figure}
+
+\section{Auto-ignition, chain explosions and explosion limits}
+
+If a homogeneous mixture is brought to ignitable conditions and left alone, its temperature history shows three phases~\cite{lecture3}. For $t<t_1$ (the \emph{induction} or auto-ignition period) the temperature barely rises above its initial value while the radical pool is slowly built up. At $t\approx t_1$ chain branching outruns termination and the radicals --- and the temperature --- grow explosively ($t_1<t<t_2$). For $t>t_2$ the products undergo slower post-combustion dissociation and recombination toward equilibrium~\cite{lecture3}. The induction time $t_1$ is the \textbf{ignition delay} $\tau_{ig}$.
+
+The competition between branching and termination produces the classic \textbf{explosion-limit} diagram in the pressure--temperature plane, with its characteristic Z-shape~\cite{lecture3,glassman2014combustion}. At low pressure radicals diffuse to the walls and recombine before they can multiply (the first limit). As pressure rises, the three-body termination $\ch{H}+\ch{O_2}+\ch{M}\rightarrow\ch{HO_2}+\ch{M}$ overtakes the branching step $\ch{H}+\ch{O_2}\rightarrow\ch{OH}+\ch{O}$ and the mixture again fails to explode (the second limit). At still higher pressure the \ch{HO_2}/\ch{H_2O_2} pathway becomes a branching route in its own right and explosion resumes (the third limit)~\cite{lecture3}. The same physics --- the temperature- and pressure-dependence of which pathway dominates --- governs the ignition delay.
+
+\paragraph{Ignition delay.} Plotting $\tau_{ig}$ against temperature for various pressures reveals several robust trends~\cite{lecture3,transcript_tutorial}. The delay falls by roughly an order of magnitude for every \SI{100}{K} of heating or every \SI{2}{atm} of pressure rise, because higher temperature accelerates every Arrhenius step and higher pressure speeds the branching reaction \ch{H}+\ch{O_2}. It also decreases with increasing oxygen content $X_{O_2}$, because the chain-branching radicals that pace ignition are the oxygen-bearing \ch{O} and \ch{OH}, so more \ch{O_2} accelerates their build-up~\cite{lecture3,transcript_tutorial}. The dependence on pressure is, however, not always monotonic: between roughly \SIrange{10}{20}{bar} the delay can \emph{increase} again, because pressure changes which intermediate pathways dominate en route to the products, and some routes generate the controlling radicals more slowly than others~\cite{transcript_tutorial}. For the same reason a simple Arrhenius fit can be misleading: for fuels with more than about four carbon atoms, $\tau_{ig}$ can actually \emph{increase} with temperature over a range of conditions --- the negative-temperature-coefficient (NTC) behaviour associated with low-temperature peroxide chemistry~\cite{lecture3}.
+
+\begin{keybox}
+\keyhead{Why ignition has a delay}
+Even when a mixture is thermodynamically ready to burn, a finite time is needed to break enough bonds and grow the radical pool before chain branching runs away. The delay shortens with $T$, with $p$ (mostly), and with $X_{O_2}$, but pressure and large-molecule chemistry can make it non-monotonic~\cite{lecture3,transcript_tutorial}.
+\end{keybox}
+
+\section{Mechanisms in practice}
+
+For hydrocarbons the chains are far longer. Methane oxidation, for example, proceeds by successive abstraction of hydrogen from \ch{CH_4} to \ch{CH_3}, then through \ch{CH_2O}, \ch{CHO} and \ch{CO} to \ch{CO_2}, with \ch{C_2} species (\ch{C_2H_6}, \ch{C_2H_4}, \dots) forming as side branches, especially under rich conditions~\cite{lecture3,warnatz2006combustion}. The widely used \textbf{GRI-Mech 3.0} mechanism for natural gas has 54 species and 325 reactions with associated rate and thermodynamic data, all treated as reversible and optimised \emph{as a whole} over $T=\SIrange{1000}{2500}{K}$ and $p=\SI{10}{Torr}$ to \SI{10}{atm}; because it is tuned globally, individual rate substitutions are discouraged~\cite{lecture3}. Mechanism size scales roughly as the number of reactions $I\approx5K$ with the number of species $K$, and the computational cost of a simulation grows steeply (super-linearly) with $K$, so the practical guidance is to use the smallest mechanism still valid for the fuel and conditions of interest~\cite{lecture3,transcript_tutorial}.
+
+Detailed mechanisms are built through a long workflow combining quantum-chemistry and transition-state estimates of rate constants, direct measurements, and iterative comparison of model predictions with experiment, refined by sensitivity and reaction-path analysis~\cite{lecture3}. Three practical difficulties recur: uncertainty over a mechanism's completeness, the numerical \emph{stiffness} that prevents CFD from carrying hundreds of species, and ambiguity in the rate parameters themselves --- so that, as the lecture stresses, kinetic modelling of large hydrocarbon fuels is fundamentally an ill-defined problem with more pathways and parameters than current knowledge can pin down~\cite{lecture3}. These mechanisms feed the equilibrium and kinetics tools used in the course and assignment --- the NASA CEA equilibrium code, and kinetics solvers such as Cantera, CHEMKIN and OpenSMOKE++~\cite{lecture3,cantera}. The nitrogen chemistry that produces \ch{NO_x} (the thermal, prompt, fuel, \ch{N_2O} and \ch{NNH} routes) is itself a finite-rate problem, deferred to Chapter~\ref{ch:emissions}; here it suffices to note that even the simple equilibrium $\ch{N_2}+\ch{O_2}\rightleftharpoons2\ch{NO}$ already shows \ch{NO} rising strongly with temperature, while real \ch{NO_x} additionally lags equilibrium because of its slow kinetics~\cite{lecture3}.

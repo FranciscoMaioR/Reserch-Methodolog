@@ -1,0 +1,84 @@
+\chapter{Pollutant Formation: \texorpdfstring{NO$_x$}{NOx}, CO, UHC and Soot}\label{ch:emissions}
+
+The link between efficiency and emissions established in Chapter~\ref{ch:intro} reaches its sharpest expression in the pollutants of aircraft combustion. This chapter treats the four engineering pollutants --- carbon monoxide, unburnt hydrocarbons, soot and oxides of nitrogen --- their formation mechanisms, the combustion parameters that govern them, and the trade-offs that make them so hard to suppress together. It follows Lectures~12 and~13 and the pollutant-formation chapters of Warnatz \emph{et al.}~\cite{lecture12,lecture13,warnatz2006combustion}.
+
+\section{The aircraft emissions inventory and its climate impact}
+
+Burning kerosene in air produces, besides the unavoidable \ch{CO_2} and \ch{H_2O}, the pollutants \ch{NO_x}, \ch{CO}, unburnt hydrocarbons (UHC), \ch{SO_x} and soot~\cite{lecture12}. Their relative amounts depend strongly on power setting, as the certification \textbf{Landing--Take-Off (LTO) cycle} makes explicit: \ch{CO} and UHC peak at low power (idle/taxi), where temperatures and mixing are poorest and combustion is least complete, whereas \ch{NO_x} and soot peak at high power (take-off, climb), where pressures and temperatures are highest~\cite{lecture12,lecture13}. This opposite behaviour is the root of the emissions dilemma: no single operating point minimises all pollutants.
+
+Climate impact is not proportional to mass. Measured by \textbf{radiative forcing}, the \emph{non-\ch{CO_2}} effects --- \ch{NO_x} (through ozone and methane chemistry), contrails and contrail cirrus, water vapour and soot --- account for about two-thirds of aviation's climate impact, and contrails alone for roughly half~\cite{lecture12}. Soot is doubly damaging: directly as black carbon, and indirectly because soot particles act as \emph{ice nuclei} that seed contrail cirrus, so reducing soot is essential to mitigating the contrail effect~\cite{lecture12}. Soot also carries adsorbed carcinogens and is linked to respiratory and cardiovascular disease, adding a public-health driver to the climate one~\cite{lecture12}.
+
+\section{Carbon monoxide and unburnt hydrocarbons}
+
+\ch{CO} and UHC are products of \emph{incomplete} combustion and so are worst where the flame is coldest or most quenched: at idle, near cool walls (within the quenching distance of Chapter~\ref{ch:premixed}), and wherever residence time is too short~\cite{lecture12,lecture13}. The key point, made already in Chapter~\ref{ch:thermo}, is that \ch{CO} is a \emph{slow} species: the oxidation $\ch{CO}+\ch{OH}\rightarrow\ch{CO_2}+\ch{H}$ does not complete within the available residence time, so equilibrium calculations \emph{over-predict} the conversion to \ch{CO_2} and the measured \ch{CO} is higher than equilibrium~\cite{transcript_tutorial,warnatz2006combustion}. \ch{CO} is therefore controlled by ensuring sufficient temperature and residence time for burnout --- exactly the conditions that aggravate \ch{NO_x}, which is the first hint of the trade-off.
+
+\section{Soot}
+
+\subsection{What soot is}
+
+Soot is the carbonaceous particulate formed in the fuel-rich, incomplete combustion or pyrolysis of carbon-containing fuels~\cite{lecture12}. The primary particles are \SIrange{10}{50}{nm} spheres of mostly carbon with a little hydrogen; they collide to form chemically bonded \emph{aggregates} and physically (van der Waals) bonded \emph{agglomerates} with mobility diameters of \SIrange{20}{500}{nm}~\cite{lecture12,haynes1981soot}. Emission standards are written in terms of the particle mass ($M$) or number ($N$) concentration, while the laboratory also measures the soot volume fraction $f_v$~\cite{lecture12}. In a conventional combustor soot forms close to the fuel spray in the rich zone and is then largely burned out in the hot, diluted downstream gases --- but not entirely, so a residue is emitted~\cite{lecture12}.
+
+\subsection{The formation pathway}
+
+Soot is built and destroyed through a sequence of physically distinct processes~\cite{lecture12,haynes1981soot}:
+\begin{enumerate}[leftmargin=2em,itemsep=2pt]
+\item \textbf{Precursor formation.} Acetylene (\ch{C_2H_2}), the most abundant intermediate of hydrocarbon combustion, polymerises at high temperature (catalysed by \ch{H} atoms) and, through the \textbf{hydrogen-abstraction--carbon-addition (HACA)} mechanism, builds polycyclic aromatic hydrocarbons (PAHs): an \ch{H} atom abstracts a ring hydrogen, and \ch{C_2H_2} adds to the radical site, growing the aromatic system ring by ring~\cite{lecture12}.
+\item \textbf{Inception (nucleation).} PAH molecules and their resonance-stabilised radicals coalesce --- through radical-chain reactions, since the abundant 2--12-ring PAHs at inception conditions are too volatile to dimerise by van der Waals forces alone --- into the first solid soot particles. Accurate inception rates remain an open research problem~\cite{lecture12}.
+\item \textbf{Surface growth.} Gas-phase \ch{C_2H_2} adds to the particle surface by HACA, each addition increasing the particle mass by two carbon atoms; this is the dominant mass-adding step~\cite{lecture12}.
+\item \textbf{Aggregation and agglomeration.} Particles collide and stick, forming aggregates (chemically bonded) and then agglomerates (physically bonded), changing $N$ and the morphology but not the total mass~\cite{lecture12}.
+\item \textbf{Oxidation.} In the hot, lean exhaust or lean zones, soot reacts with \ch{O_2} and \ch{OH} to give \ch{CO} and \ch{CO_2}, reducing both mass and number. Models often use the Nagle--Strickland-Constable graphite rate, but soot, containing hydrogen, is more reactive than graphite, and the oxidation rate of soot from novel fuels is still an open question~\cite{lecture12}.
+\end{enumerate}
+Each process moves $M$ and $N$ differently: inception raises both $M$ and $N$; surface growth raises $M$ at fixed $N$; aggregation/agglomeration lower $N$ at fixed $M$; oxidation lowers $M$ (and, by burning small particles away, $N$); fragmentation raises $N$ while lowering $M$~\cite{lecture12}. Net emissions thus depend on the \emph{interplay} of these competing processes, which is why combustion conditions matter so much.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.78\linewidth]{fig_soot_overview}
+\caption{Overview of soot formation: precursor (PAH) formation, inception, surface growth, aggregation, agglomeration and oxidation~\cite{lecture12}.}
+\label{fig:fig_soot_overview}
+\end{figure}
+
+\subsection{What controls soot}
+
+Soot emissions are governed by temperature, equivalence ratio, pressure, fuel type, atomisation/mixing and residence time~\cite{lecture12}. Soot increases strongly with \emph{equivalence ratio} (more fuel-rich $\Rightarrow$ more precursors and less oxidiser), so rich zones are the soot sources. The dependence on \emph{temperature} is \emph{bell-shaped}: too cold and the pyrolysis/HACA chemistry is slow, too hot and oxidation dominates, with a peak at intermediate temperature~\cite{lecture12}. Soot increases with \emph{pressure} (higher concentrations accelerate the bimolecular growth steps), so rising engine overall pressure ratios tend to raise soot unless countered by design, and \emph{larger hydrocarbons} (and aromatic fuels) soot more readily because they form PAHs more easily~\cite{lecture12}. Good \emph{atomisation and mixing} reduce the locally rich pockets where soot is born~\cite{lecture12}.
+
+\subsection{Reducing soot}
+
+Three levers are highlighted~\cite{lecture12}: sustainable aviation fuels (SAFs), whose low aromatic content cuts soot by \SIrange{30}{50}{\percent} in blends; optimisation of engine design and operation to enhance soot burnout; and, ultimately, switching to hydrogen, which eliminates carbon and hence soot entirely --- at the cost of a possible \ch{NO_x} penalty, the subject of Chapter~\ref{ch:hydrogen}. Because contrail formation is seeded by soot, even modest soot reductions have leveraged climate benefits~\cite{lecture12}.
+
+\section{Oxides of nitrogen}
+
+\subsection{A non-equilibrium, Arrhenius-controlled process}
+
+\ch{NO_x} formation is a \emph{non-equilibrium} process whose rate is set by Arrhenius kinetics, $k=A\exp(-E_a/R_0T)$, and therefore depends exponentially on temperature~\cite{lecture13}. Five mechanisms are distinguished~\cite{lecture13}.
+
+\paragraph{Thermal (Zeldovich) NO.} The dominant route at high temperature, via the chain
+\begin{equation}
+\ch{O}+\ch{N_2}\rightarrow\ch{NO}+\ch{N},\qquad
+\ch{N}+\ch{O_2}\rightarrow\ch{NO}+\ch{O},\qquad
+\ch{N}+\ch{OH}\rightarrow\ch{NO}+\ch{H}.
+\label{eq:zeldovich}
+\end{equation}
+The first reaction, breaking the strong \ch{N_2} triple bond, has a very high activation energy and is rate-limiting, which makes thermal \ch{NO} extremely temperature-sensitive (it switches on sharply above $\sim\SI{1800}{K}$) and is favoured during \emph{lean} burning; the third reaction matters more under rich conditions~\cite{lecture13,warnatz2006combustion}. Because of the exponential temperature dependence, thermal \ch{NO_x} is overwhelmingly a high-temperature, high-power problem.
+
+\paragraph{Prompt (Fenimore) NO.} \ch{NO} is measured close to the fuel inlet at low residence time, more than thermal kinetics can explain. Fenimore's mechanism has hydrocarbon radicals attack \ch{N_2}, $\ch{CH}+\ch{N_2}\rightarrow\ch{HCN}+\ch{N}$ (activation energy $\approx\SI{75}{kJ/mol}$), the \ch{HCN} then oxidising through \ch{CN}/\ch{NCO} to \ch{NO}~\cite{lecture13}. Because it needs \ch{CH} radicals, it is significant only where these are abundant --- fuel-rich conditions, roughly $\phi=0.6$--$1.6$ --- and, having a low activation energy, it operates at \emph{lower} temperatures than the thermal route~\cite{lecture13}.
+
+\paragraph{The N$_2$O route.} At low temperature, lean conditions and high pressure, \ch{NO} forms via nitrous oxide, $\ch{N_2O}+\ch{O}\rightarrow\ch{NO}+\ch{NO}$ (activation energy $\approx\SI{97}{kJ/mol}$), with \ch{N_2O} produced by three-body and radical reactions; this is the primary source at low power, especially for the lean, premixed combustors designed to suppress the thermal route~\cite{lecture13}. The \textbf{NNH} and \textbf{\ch{NO_2}} routes and \textbf{fuel-bound nitrogen} complete the list, the last being irrelevant for clean aviation fuels but important for some alternative fuels~\cite{lecture13}.
+
+\subsection{What controls NO$_x$, and the regulations}
+
+\ch{NO_x} is governed by the same parameter set as soot --- temperature, equivalence ratio, pressure, fuel, atomisation and residence time --- but with \emph{temperature} the overwhelming driver because of the Arrhenius dependence of the thermal route~\cite{lecture13,lefebvre2010gas}. \ch{NO_x} rises steeply with flame temperature and hence peaks near stoichiometric (slightly lean), increases with inlet temperature and pressure, and grows with residence time (more time at high temperature means more \ch{NO})~\cite{lecture13}. The regulatory response is the ICAO \textbf{CAEP} standard, which caps the \ch{NO_x} emission (in \si{g/kN} of thrust) as a function of engine overall pressure ratio and has been tightened in steps from the original 1986 standard through CAEP/2, /4, /6 and /8 (2014); because higher pressure ratio (good for thermal efficiency) raises flame temperature and \ch{NO_x}, the standard explicitly trades the two~\cite{lecture13}.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.62\linewidth]{fig_caep}
+\caption{ICAO CAEP \ch{NO_x} standards: permitted emission (per unit thrust) versus engine overall pressure ratio, tightened over successive CAEP revisions~\cite{lecture13}.}
+\label{fig:fig_caep}
+\end{figure}
+
+\subsection{Reducing NO$_x$}
+
+The strategies all attack the temperature and residence-time drivers~\cite{lecture13}: \emph{temperature control} through lean, premixed or partially premixed combustion (lowering the peak temperature below the thermal-\ch{NO_x} threshold); \emph{dilution} by water or steam injection or by flue-gas/internal recirculation (absorbing heat and lowering temperature); and, for ground-based turbines, \emph{post-combustion treatment} such as selective catalytic reduction with ammonia or urea (AdBlue). Aero-engines, constrained by weight and the need for short residence times ($\sim\SI{5}{ms}$), rely chiefly on the lean and staged combustor concepts of Chapter~\ref{ch:combustors}~\cite{lecture13}.
+
+\section{The soot--NO\texorpdfstring{$_x$}{x}--CO trade-off}
+
+The pollutants pull in opposite directions, and this is the central design tension of practical combustion~\cite{lecture12,lecture13}. Rich, cool combustion makes \emph{soot} and \ch{CO}; hot, near-stoichiometric combustion makes \ch{NO_x}; very lean combustion lowers \ch{NO_x} but risks incomplete burnout (more \ch{CO}/UHC) and instability or blow-off. A conventional diffusion-burning combustor, sitting near $\phi\approx1$, is stable, flashback-free and reliable to ignite but is high in both \ch{NO_x} and soot; a lean premixed combustor cuts \ch{NO_x} and soot but is prone to flashback, instability and unreliable ignition, and harder to keep \ch{CO} low~\cite{lecture13}. There is no operating point that minimises everything, which is precisely why combustor architecture --- staging the combustion in space to keep each zone out of the worst regime --- is the engineering response developed next.

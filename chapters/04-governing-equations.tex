@@ -1,0 +1,89 @@
+\chapter{Governing Equations and Molecular Transport}\label{ch:governing}
+
+The thermodynamics of Chapter~\ref{ch:thermo} describes a homogeneous reactor with no space dependence; the kinetics of Chapter~\ref{ch:kinetics} supplies the source terms. To turn these into a \emph{flame} --- a structure in space --- we need the conservation equations for a reacting flow and a model for how species, momentum and heat are transported by molecular motion. This chapter assembles those equations, following Lecture~8 and the conservation-equation treatments of Kuo, Warnatz \emph{et al.}\ and the Maas notes~\cite{lecture8,kuo2005conservation,warnatz2006combustion,maas_combustion_lecture}.
+
+\section{What is conserved, and the control-volume idea}
+
+A reacting gas mixture is described by the density $\rho$, the velocity $\vv v$, the pressure $p$, an energy variable, and the $N$ species mass fractions $Y_k$~\cite{lecture1,lecture8}. Each conservation law is obtained by writing, for an arbitrary fixed control volume $\Omega$, that the rate of change of the contained quantity equals the net flux through the boundary $\partial\Omega$ plus any internal sources; applying the Gauss (divergence) theorem and letting $\Omega$ shrink yields the differential form~\cite{lecture8}. The summation convention over repeated spatial indices $i,j$ is used throughout, and care is needed because the index $i$ also labels species in the species equation~\cite{lecture8}.
+
+\section{Mass and momentum}
+
+\textbf{Total mass} is conserved with no source, giving the continuity equation
+\begin{equation}
+\pder{\rho}{t}+\pder{}{x_i}(\rho v_i)=0 .
+\label{eq:continuity}
+\end{equation}
+\textbf{Momentum} obeys the Navier--Stokes equation
+\begin{equation}
+\pder{}{t}(\rho v_j)+\pder{}{x_i}(\rho v_i v_j)=-\pder{p}{x_j}+\pder{\tau_{ij}}{x_i}+\rho g_j ,
+\label{eq:momentum}
+\end{equation}
+with transient, convective, pressure-gradient, viscous and body-force terms in turn~\cite{lecture8}. For a Newtonian fluid the viscous stress is linear in the velocity gradient, $\tau_{ij}=2\mu\hat d_{ij}$, where $\hat d_{ij}=d_{ij}-\tfrac13 d_{kk}\delta_{ij}$ is the deviatoric part of the rate-of-deformation tensor $d_{ij}=\tfrac12(\partial v_i/\partial x_j+\partial v_j/\partial x_i)$, and the dynamic viscosity $\mu$ is itself a property of the local temperature and composition~\cite{lecture8,white2016fluid}. Momentum is the only one of the conserved quantities that has no chemical source: combustion changes the momentum balance only indirectly, through the density and the transport coefficients.
+
+\section{Species mass and the diffusion velocity}
+
+The mass of an individual species is \emph{not} conserved, because chemical reaction creates and destroys it, and because each species moves with its own velocity $\vv v_i$ that differs from the mixture velocity~\cite{lecture8}. The exact species balance is
+\begin{equation}
+\pder{}{t}\rho_i+\divv(\rho_i \vv v_i)=\dot\omega_i,\qquad \rho_i=\rho Y_i,
+\label{eq:species-exact}
+\end{equation}
+with $\dot\omega_i$ the net production rate from Chapter~\ref{ch:kinetics}~\cite{lecture8}. The mass-based \textbf{mixture velocity} is the centre-of-mass velocity $\vv v=\sum_i Y_i\vv v_i$ (the velocity that appears in the momentum balance), and the \textbf{diffusion velocity} is the departure of a species from it, $\vv V_i=\vv v_i-\vv v$. By construction these satisfy the consistency condition $\sum_i Y_i\vv V_i=0$: diffusion redistributes species but moves no net mass~\cite{lecture8,kuo2005conservation}. Splitting the species flux into convection by the mixture and convection by the diffusion velocity gives the form actually solved,
+\begin{equation}
+\pder{}{t}(\rho Y_i)+\divv(\rho Y_i\vv v)=-\divv(\rho Y_i\vv V_i)+\dot\omega_i ,
+\label{eq:species-split}
+\end{equation}
+in which the diffusive flux $\rho Y_i\vv V_i$ requires a separate model~\cite{lecture8}.
+
+\section{Energy}
+
+The energy equation can be written for several energy variables, and the lecture is careful about the choice~\cite{lecture8}. Per unit mass one has the specific internal energy $u=U/m$, the specific total energy $e_t=u+\tfrac12\vv v\cdot\vv v$, and the specific enthalpy $h=e_t-\tfrac12\vv v\cdot\vv v+p/\rho=u+p/\rho$; for reacting flows the absolute enthalpy of Eq.~\eqref{eq:abs-enthalpy}, which carries the chemical energy in $\Delta h_{f,k}^0$, is the natural variable. The energy flux comprises a convective part, a diffusive heat flux, and a flux due to the fluid stresses; the source $s_e$ collects radiation and any work not otherwise accounted for, and a non-zero $s_e$ signals that the chosen ``total'' energy does not capture all forms of energy~\cite{lecture8}. The diffusive heat flux has two parts,
+\begin{equation}
+\vv q=\underbrace{-\lambda\grad T}_{\text{Fourier conduction}}+\underbrace{\sum_k h_k\,\rho Y_k\vv V_k}_{\text{transport of enthalpy by diffusion}}\;(+\ \text{Dufour}),
+\label{eq:heatflux}
+\end{equation}
+where $\lambda$ is the thermal conductivity and the second term is the enthalpy carried by diffusing species; a third (Dufour) contribution, a heat flux driven by concentration gradients, is the reciprocal of thermal diffusion and is almost always negligible in combustion~\cite{lecture8,kuo2005conservation}.
+
+\section{Modelling the species diffusive flux}
+
+Closing Eq.~\eqref{eq:species-split} requires a model for $\rho Y_i\vv V_i$. The fundamental statement is \textbf{Fick's law}: the diffusive flux is proportional to, and directed against, the gradient of the diffusing species, so diffusion always flattens gradients~\cite{lecture8}. For a genuine \emph{binary} mixture (only two species) it is exact,
+\begin{equation}
+\rho Y_i\vv V_i=-\rho D_{12}\grad Y_i,\qquad D_{12}=D_{21},
+\label{eq:fick}
+\end{equation}
+with the binary diffusion coefficient $D_{12}(p,T)$ a material property obtained from experiment, kinetic-theory models of idealised molecules, or simulation~\cite{lecture8,warnatz2006combustion}. The tabulated binary coefficients (Turns) show the expected ordering: the light radicals \ch{H} and \ch{H_2} are by far the most diffusive, with $D$ roughly an order of magnitude larger than for the heavy molecules --- a fact that will dominate the discussion of hydrogen flames and preferential diffusion in Chapters~\ref{ch:stretch} and~\ref{ch:hydrogen}~\cite{lecture8,turns2000introduction}.
+
+Real flames have $N>2$ species, and rigorous multicomponent diffusion (the Stefan--Maxwell equations) is expensive. Two standard simplifications are used~\cite{lecture8}. When one species (e.g.\ \ch{N_2} in air combustion) is far more abundant than the rest, it can be treated as a \emph{carrier}: every minor species diffuses against it with its binary coefficient $D_{iN}$, $N-1$ species equations are solved with Eq.~\eqref{eq:fick}, and the carrier follows from $Y_N=1-\sum_{i\ne N}Y_i$. A more accurate option is an \textbf{effective (mixture) diffusivity} $D_i^M$ for species $i$ in the local mixture, computed from the binary coefficients and the composition (Warnatz \emph{et al.}, Eq.~5.25)~\cite{lecture8,warnatz2006combustion}. Thermal (Soret) diffusion, a flux driven by temperature gradients, can be added for the light species but is usually a secondary effect~\cite{warnatz2006combustion}.
+
+\section{The transport analogy and the dimensionless groups}
+
+Momentum, heat and species all obey the same gradient-transport structure --- flux proportional to a gradient --- which is the content of Newton's, Fourier's and Fick's laws respectively~\cite{lecture8}:
+\begin{equation}
+\tau_{xy}=-\nu\,\pder{}{x}(\rho v_y),\qquad
+q_x=-\alpha\,\pder{}{x}(\rho c_p T),\qquad
+J_{i,x}=-D_i^M\,\pder{}{x}(\rho Y_i),
+\end{equation}
+with $\nu=\mu/\rho$ the kinematic viscosity and $\alpha=\lambda/(\rho c_p)$ the thermal diffusivity. The ratios of these three diffusivities define the dimensionless groups that recur throughout combustion~\cite{lecture8,warnatz2006combustion}:
+\begin{equation}
+\Pran=\frac{\nu}{\alpha}\ \text{(Prandtl)},\qquad
+\Sc_i=\frac{\nu}{D_i^M}\ \text{(Schmidt)},\qquad
+\Le_i=\frac{\alpha}{D_i^M}=\frac{\Sc_i}{\Pran}\ \text{(Lewis)} .
+\label{eq:dimensionless}
+\end{equation}
+The Lewis number --- the ratio of heat diffusivity to species diffusivity --- is the single most important of these for flame structure, because it measures whether heat or reactants diffuse faster across the flame, and so controls the local enthalpy of the reaction zone.
+
+\section{The constant-Lewis-number model and why $\Le\ne1$ matters}
+
+A very common simplification is to assign each species a \emph{constant} Lewis number, so that its diffusivity tracks the heat diffusivity, $D_i^M=\alpha/\Le_i=\lambda/(\rho c_p\Le_i)$, with $\alpha$ depending only on the mixture~\cite{lecture8}. The simplest case, $\Le_i=1$ for all species (equal diffusivities of heat and mass), makes the species and temperature equations isomorphic and underlies many theoretical results, but it is quantitatively poor for the light species: tabulated values give $\Le\approx0.3$ for \ch{H_2} and $0.18$ for \ch{H}, against $\approx1.1$ for \ch{O_2}, $1.39$ for \ch{CO_2} and $\approx1$ for \ch{CH_4} and \ch{N_2}~\cite{lecture8}. The consequences are real and visible: in a computed flat stoichiometric hydrogen flame the fast-diffusing \ch{H_2} changes \emph{earlier} in space than the temperature and \ch{O_2}, producing a local maximum in the \ch{O_2} profile, and in lean turbulent hydrogen flames the low Lewis number drives spectacular \textbf{cellular burning} structures~\cite{lecture8,warnatz2006combustion,day2009cellular}. These preferential-diffusion effects are the subject of Chapters~\ref{ch:stretch} and~\ref{ch:hydrogen}.
+
+\section{Equations of state and closing the system}
+
+The conservation equations~\eqref{eq:continuity}--\eqref{eq:species-split} plus the energy equation are closed by two equations of state: the \emph{thermal} equation of state $p=\rho R_0 T/W$ relating $p$, $\rho$, $T$ and composition, and the \emph{caloric} equation of state $h=\sum_k Y_k h_k(T)$ from Eq.~\eqref{eq:abs-enthalpy} relating enthalpy to temperature and composition~\cite{lecture8}. Together with the transport models and the kinetic source terms $\dot\omega_k$, this gives a closed (if formidable) system for $\rho,\vv v,p,T$ and $Y_k$~\cite{lecture8,maas_combustion_lecture}.
+
+\section{Convection, diffusion and reaction in balance}
+
+It is illuminating to reduce the species equation to one dimension,
+\begin{equation}
+\pder{}{t}(\rho Y_i)+\pder{}{x}(\rho Y_i v)=\pder{}{x}\!\left(\rho D_i\,\pder{Y_i}{x}\right)+\dot\omega_i ,
+\label{eq:cdr-1d}
+\end{equation}
+which displays the three competing mechanisms --- convection, diffusion and reaction --- whose balance defines a flame~\cite{lecture8}. Diffusion alone spreads an initial profile to a width $\sim\sqrt{D(t-t_0)}$ (for a typical $D=\SI{0.1}{cm^2\,s^{-1}}$ this is about \SI{0.03}{m} after \SI{100}{s}); convection alone merely translates it; reaction alone consumes it locally. A steady flame exists precisely where the three balance exactly: the reaction sharpens the profile, diffusion spreads it, and convection carries it at the speed that keeps the structure stationary~\cite{lecture8}. This balance is the starting point for the laminar-flame analyses of the next two chapters, and the comparison of the chemical time scale embedded in $\dot\omega_i$ with the turbulent time scales of the flow is what generates the combustion regime diagrams of Chapter~\ref{ch:turbulence}.

@@ -1,0 +1,82 @@
+\chapter{Hydrogen Combustion for Aviation}\label{ch:hydrogen}
+
+Hydrogen is the most discussed route to carbon-free aviation, and it draws together every theme of this guide: its thermodynamics set a high flame temperature, its kinetics a short ignition delay, its transport an extreme Lewis number, and these combine to make flashback, \ch{NO_x} and thermoacoustic instability the governing design problems. This final chapter follows the two hydrogen lectures, with the instability physics anchored in Oppong \emph{et al.}~\cite{lecture14part1,lecture14,oppong2022instability}.
+
+\section{Why hydrogen, and in what form}
+
+Aviation is hard to decarbonise: it depends almost entirely (99\%) on fossil fuel, demands high energy density and power within strict volume and weight limits, and is bound by stringent safety and cost constraints; in 2023 it was about \SI{2.5}{\percent} of global \ch{CO_2} and some \SI{4}{\percent} of warming once non-\ch{CO_2} effects are counted~\cite{lecture14part1}. Sustainable aviation fuels are the near-term, drop-in answer but are feedstock-limited, so in a net-zero-by-2050 scenario hydrogen is the candidate for the deeper, ``radical'' decarbonisation of larger aircraft~\cite{lecture14part1}. Hydrogen can be used two ways: as an \emph{energy carrier} in fuel cells (electrochemical, water the only product) or as an \emph{energy source} in direct combustion --- the latter being the subject here~\cite{lecture14part1}. Its climate credentials depend on how it is made (the ``colours'': green from renewable electrolysis, blue from reformed fossil fuel with carbon capture, grey from steam-methane reforming without capture, and so on)~\cite{lecture14part1}.
+
+\section{Hydrogen as a fuel: properties and the ``not drop-in'' problem}
+
+Hydrogen differs from hydrocarbons in nearly every combustion property, and each difference has a consequence~\cite{lecture14part1}:
+\begin{itemize}[leftmargin=1.5em,itemsep=2pt]
+\item \textbf{Energy density.} About three times the specific energy of Jet-A by mass ($\sim\SI{120}{MJ/kg}$, with $\mathrm{LHV}\approx\SI{70.9}{MJ/kg}$ for the liquid often quoted in different conventions) but only about a quarter by volume, so it must be stored cryogenically at \SI{20.3}{K} and cannot fit in the wings --- only the fuselage or pods~\cite{lecture14part1}.
+\item \textbf{Flame temperature.} The adiabatic flame temperature is about \SI{180}{K} above methane (around \SI{2480}{K}), which directly threatens high thermal \ch{NO_x}, especially in non-premixed combustion~\cite{lecture14part1}.
+\item \textbf{Flame speed.} The laminar burning velocity is roughly 4--5 times that of Jet-A ($\sim\SIrange{2.5}{2.9}{m\,s^{-1}}$), which threatens flashback~\cite{lecture14part1}.
+\item \textbf{Diffusivity.} The mass diffusivity is 3--4 times that of methane, so hydrogen leaks readily through valves and seals, and --- with $\Le\ll1$, its molecular diffusivity far exceeding the thermal diffusivity --- it exhibits strong preferential diffusion, which raises the flame speed further at lean conditions through the thermo-diffusive and stretch effects of Chapter~\ref{ch:stretch}~\cite{lecture14part1}.
+\item \textbf{Flammability and ignition.} A very wide flammability range (4--75\% by volume in air, versus 4.4--16.5\% for methane) and a very low minimum ignition energy make hydrogen susceptible to pre-ignition from almost any source, though its auto-ignition \emph{temperature} is high~\cite{lecture14part1}.
+\end{itemize}
+The unambiguous benefit is the elimination of carbon-based pollutants --- no soot, \ch{CO}, UHC or volatile organics (Chapter~\ref{ch:emissions}) --- but at the cost of a redesign at every level: injectors must pass roughly eight times the volume flow for equal power; liners and cooling must handle the higher heat release; all seals and manifolds must resist hydrogen embrittlement and leakage; the fuel system needs cryogenic pumps and heated lines; and the controls must cope with a much faster flame response~\cite{lecture14part1}. Hydrogen is decidedly \emph{not} a drop-in fuel.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.7\linewidth]{fig_h2_props}
+\caption{Comparison of the combustion-relevant properties of hydrogen, methane and kerosene~\cite{lecture14part1}.}
+\label{fig:fig_h2_props}
+\end{figure}
+
+\section{The three coupled challenges}
+
+The hydrogen combustor design problem reduces to three coupled challenges, all traceable to the properties above~\cite{lecture14}:
+\begin{description}[leftmargin=1.5em,itemsep=3pt]
+\item[Flashback.] The high flame speed (from both diffusion/reaction chemistry and the lean thermo-diffusive/stretch enhancement), the auto-ignition regimes ($\tau_{ig}<\tau_{res}$ at engine pressure, Chapter~\ref{ch:diagnostics}), and hydrogen's resistance to wall quenching (its quenching distance is only \SI{0.64}{mm}, Chapter~\ref{ch:premixed}) all make the flame far more prone to propagate upstream than a hydrocarbon flame.
+\item[NO$_x$.] The higher flame temperature for a given equivalence ratio and the strong availability of \ch{OH} radicals feed the thermal route, while the \ch{NNH} and \ch{N_2O} routes contribute even at lower temperature.
+\item[Thermoacoustics.] Hydrogen's different (faster) flame dynamic response and the diffusion-driven fluctuations of mixture fraction change the frequencies and gains of the combustion instabilities.
+\end{description}
+
+\paragraph{Thermoacoustic coupling.} A thermoacoustic instability is a feedback loop: a pressure fluctuation perturbs the velocity, which moves the flame and modulates the heat release, which in turn drives the pressure~\cite{lecture14}. By the \textbf{Rayleigh criterion} the oscillation is amplified when the heat-release and pressure fluctuations are in phase, $\int p'q'\,\dd t>0$. The forced response is quantified by the \emph{flame transfer function} $\hat{\dot Q}'(\omega)/\overline{\dot Q}=G e^{i\varphi}\,\hat u'(\omega)/U_{bulk}$, with gain $G$ and frequency-dependent phase $\varphi$~\cite{lecture14}. Hydrogen changes this in specific ways: the shorter, faster-responding flame couples to different frequencies; the short ignition delay strengthens the flame--acoustic feedback gain; lean operation (for \ch{NO_x}) increases sensitivity to equivalence-ratio fluctuations near blow-off; and, through preferential diffusion, a positive strain fluctuation produces an \emph{intrinsic} fluctuation of heat release and flame speed whose phase relative to velocity depends on the sign of the Markstein length, so hydrogen flames can be thermoacoustically unstable even when unconfined~\cite{lecture14}.
+
+\section{Intrinsic instabilities of hydrogen flames}
+
+The cellular instabilities of Chapter~\ref{ch:stretch} are pronounced for hydrogen because of its low Lewis number~\cite{lecture14,oppong2022instability}. Three mechanisms act: \emph{thermo-diffusive} (TD), arising from the imbalance between chemical and sensible enthalpy fluxes under preferential diffusion ($\Le\ne1$), dominant at small scales; \emph{hydrodynamic} (Darrieus--Landau), from the thermal-expansion density jump, dominant at large scales; and \emph{buoyant} (Rayleigh--Taylor), relevant only when buoyant time scales are comparable to the flame propagation time and growing with pressure and flame size~\cite{lecture14}. A useful composite growth rate is
+\begin{equation}
+\omega_{tot}=\omega_{DL}\left(1-\frac{\Omega}{\mathrm{Pe}}\right),\qquad \mathrm{Pe}\approx\frac{r}{\delta_L},
+\label{eq:cellular-growth}
+\end{equation}
+where $\omega_{DL}\sim s_L k$ is the (destabilising) Darrieus--Landau rate (a function of the expansion ratio $T_b/T_u$), $\mathrm{Pe}$ is the Peclet number (flame radius over thickness), and $\Omega$ is a function of the effective Lewis number and the temperatures that captures the (stabilising or destabilising) diffusive--thermal effect~\cite{lecture14}. For a turbulent flow an effective Lewis number $\Le_{eff}\approx1+a\,\Ret/(\Le^*+a\,\Ret)$ (with $0.1<a<0.2$ and $\Le^*$ a mixture average) is used~\cite{lecture14}. The key results: thermal diffusion and the viscosity jump are always stabilising, so only molecular diffusion can destabilise (depending on $\Le_{eff}$); at short wavelengths the TD instability dominates and the flame is unstable when $\Le_{eff}<\Le_{cr}$ with $0.5<\Le_{cr}<1$ --- which is why combustors usually ``get away'' with mild instability; and $\Le_{cr}$ \emph{decreases} toward the flammability limits, so lean hydrogen flames become diffusively unstable, with gravity able to damp the longest-wavelength disturbances~\cite{lecture14}. Distinct from the TD instability is plain \textbf{differential diffusion}: in a lean hydrogen flame the unequal diffusion of species varies the local equivalence ratio across the flame, so the mixture fraction is \emph{no longer conserved} --- the main effect that hydrogen models must capture~\cite{lecture14}.
+
+\section{Modelling hydrogen flames}
+
+The lecture identifies three effects that a hydrogen model must add to the framework of Chapter~\ref{ch:turbcomb}~\cite{lecture14}. \textbf{(1) Differential diffusion:} if the mesh resolves the flame thickness, the TD instability is captured automatically provided the flame speed is right; in a flamelet model (e.g.\ FGM), including differential diffusion in the flamelet suffices for small curvature, but significant curvature breaks the one-dimensional assumption and demands stretched or two-dimensional flamelets, or a non-conserved mixture fraction --- with no established approach yet. \textbf{(2) Thermo-diffusive surface growth:} if the mesh is coarser than the flame thickness, the surface-growth rate of the TD instability (an increase in consumption speed, $\omega_{tot}=\omega_{DL}(1-\Omega/\mathrm{Pe})=f(k)$) must itself be modelled, with the presumed PDF possibly depending on extra parameters, or an artificially thickened-flame model accounting for the effect. \textbf{(3) Auto-ignition:} a 0-D, chemistry-dominated phenomenon, so the mechanism choice is critical; with hydrogen's short ignition delays one may encounter auto-ignition or auto-ignition-assisted regimes, requiring a reaction-rate model that blends propagation and auto-ignition, $\dot\omega_{tot}\approx a\,\dot\omega_{propag}+b\,\dot\omega_{autoign}$, an index to distinguish the regimes, and an equation tracking the ignition delay in the unburnt state~\cite{lecture14}.
+
+\section{Low-NO\texorpdfstring{$_x$}{x} combustor technologies for hydrogen}
+
+The combustor concepts of Chapter~\ref{ch:combustors} were designed for hydrocarbons, and auto-ignition can compromise all of them with hydrogen~\cite{lecture14}. Reviewing them for hydrogen~\cite{lecture14,lecture14part1}:
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.8\linewidth]{fig_h2_lownox}
+\caption{State-of-the-art low-\ch{NO_x} combustion technologies (lean-premixed, RQL, micro-mix) and their specific issues for hydrogen~\cite{lecture14}.}
+\label{fig:fig_h2_lownox}
+\end{figure}
+\begin{itemize}[leftmargin=1.5em,itemsep=3pt]
+\item \textbf{Lean-premixed (DLN/TAPS).} Premixing upstream gives a lean mixture, low adiabatic temperature and ultra-low \ch{NO_x} (TAPS achieves $\sim$50\% below CAEP/6 on Jet-A), but for hydrogen the flame speed can exceed the premixer exit velocity --- causing flashback that has destroyed test hardware --- and the short ignition delay risks auto-ignition inside the premixer. The design space is contradictory: more air preheat narrows the flashback margin, leaner operation raises thermoacoustic risk, higher pressure shortens the auto-ignition delay, and a shorter premixer reduces auto-ignition but worsens mixing. Satisfying flashback safety, low \ch{NO_x}, stability and auto-ignition margin together demands new architectures.
+\item \textbf{Rich-Quench-Lean.} The rich first stage is stable and low-\ch{NO_x} (oxygen-starved) and, for hydrogen, has \emph{no soot} penalty; but the temperature only falls low enough at very high equivalence ratio ($\phi\approx3$), and hydrogen's strong reactivity prevents the quick mixing the concept relies on and makes the flame hard to extinguish in the quench zone~\cite{lecture14}.
+\item \textbf{Micro-mix.} Replaces one large premixed flame with hundreds of millimetre-scale jet-in-crossflow \emph{diffusion} flames; being non-premixed it is flashback-proof, and \ch{NO_x} is limited by the very short high-temperature residence time. The challenges are manufacturing hundreds of injectors, coking, and possible flame--flame interaction and auto-ignition that could lengthen residence and spike \ch{NO_x}~\cite{lecture14,lecture14part1}.
+\item \textbf{Sequential combustion.} Two combustors in series decouple high-power operation from \ch{NO_x} control and exploit hydrogen's auto-ignition propensity (the hot first-stage exhaust reliably auto-ignites hydrogen in the second); demonstrated at 100\% hydrogen on the Ansaldo GT34~\cite{lecture14part1}.
+\item \textbf{Flameless / MILD combustion.} Strong product recirculation gives a distributed reaction zone with no temperature peak and very low \ch{NO_x}; hydrogen's wide flammability and auto-ignition propensity make MILD mode easier to reach, though the high recirculation ratios are hard to achieve at gas-turbine pressures and velocities~\cite{lecture14part1}.
+\item \textbf{Rotating detonation.} A pressure-gain concept exploiting hydrogen's high detonability for a 5--10\% efficiency gain, but with open problems in turbine integration, structural loads and detonation-temperature \ch{NO_x}~\cite{lecture14part1}.
+\end{itemize}
+
+\section{Design strategies to prevent flashback and instabilities}
+
+For lean-burn hydrogen the lecture lists several mitigation strategies, each with limits~\cite{lecture14}: \textbf{axial air injection} pushes the flame downstream and counters core- and boundary-layer (and arguably CIVB and auto-ignition) flashback, at the cost of altering the swirl number and equivalence ratio and adding pressure drop; \textbf{water injection} suppresses flashback (including the auto-ignition-driven kind) and reduces \ch{NO_x} through its latent heat while keeping efficiency high, but lowers thermal efficiency and adds plumbing; \textbf{dual fuel} (e.g.\ methane with a few percent hydrogen) reduces onboard hydrogen storage and helps control instabilities, but reintroduces carbon; \textbf{strain-lock}, designing deliberately high-strained flames, passively avoids flashback and reduces \ch{NO_x} (exploiting the strain response of Chapter~\ref{ch:stretch}), though with unclear instability behaviour; and for RQL a \textbf{trapped-vortex} system with temperature control manages the cavity mixing to keep \ch{NO_x} low, limited by uncertain low-temperature thermochemical data and possible cavity instabilities~\cite{lecture14}.
+
+\begin{keybox}
+\keyhead{Hydrogen in one paragraph}
+Hydrogen offers carbon-free, soot-free, \ch{CO}-free combustion with three times the specific energy of kerosene, but its high flame speed and low Lewis number cause flashback and thermo-diffusive instability, its high flame temperature and \ch{OH} pool threaten \ch{NO_x}, and its short ignition delay aggravates auto-ignition and thermoacoustics. No existing combustor is drop-in; lean-premixed, micro-mix, sequential, MILD and detonation concepts each trade these risks differently, and design strategies such as axial-air and water injection, dual fuel and strain-lock manage them at the margin~\cite{lecture14part1,lecture14}.
+\end{keybox}
+
+\section{Outlook}
+
+Hydrogen makes vivid the message of this guide: a combustor is the meeting point of thermodynamics, kinetics, transport, laminar and turbulent flame theory, instabilities, diagnostics and emissions, and changing the fuel perturbs all of them at once. The recurring trade-offs --- efficiency against emissions, \ch{NO_x} against \ch{CO} and soot, stability against low \ch{NO_x}, flashback against mixing --- do not disappear with hydrogen; they reappear in new and tighter forms, which is why the fundamentals developed in the preceding chapters remain the essential tools for designing the carbon-free combustion systems that aviation now requires~\cite{lecture14part1,lecture14}.

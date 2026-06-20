@@ -1,0 +1,66 @@
+\chapter{Turbulent Combustion and Its Modelling}\label{ch:turbcomb}
+
+Chapter~\ref{ch:turbulence} established how turbulence wrinkles and strains a flame and classified the regimes. This chapter confronts the practical question: how is a turbulent flame computed? The answer hinges on a single fundamental difficulty --- the averaged chemical source term cannot be evaluated from averaged quantities --- and on the families of models devised to close it. The treatment follows Lecture~10, the review of Veynante \& Vervisch, and the relevant chapters of Warnatz \emph{et al.}~\cite{lecture10,veynante2002turbulent,warnatz2006combustion}.
+
+\section{Why turbulent combustion CFD is hard}
+
+Several difficulties compound~\cite{lecture10}. There is a great deal of physics to include; even predicting the non-reacting flow field is not easy; combining a complex geometry, high-fidelity turbulence modelling and a detailed reaction mechanism gives extremely expensive calculations; and the strong density changes produced by heat release must be fed back to the flow solver, which can destabilise it. But beyond all of these sits one fundamental obstacle, described next, that is present whether one uses RANS or LES~\cite{lecture10}.
+
+\section{The closure problem: the mean reaction rate}
+
+Averaging (RANS) or filtering (LES) the species equation of Chapter~\ref{ch:governing}, using Favre weighting to avoid unclosed density fluctuations, gives
+\begin{equation}
+\pder{}{t}(\avg{\rho}\favg{Y}_k)+\pder{}{x_i}(\avg{\rho}\favg{u}_i\favg{Y}_k)
+=\pder{}{x_i}\!\left[(\avg{\rho}D_{k,\mathrm{mix}}+\avg{\rho}D_T)\,\pder{\favg{Y}_k}{x_i}\right]+\avg{\dot\omega_k},
+\label{eq:favre-species}
+\end{equation}
+where the turbulent flux has been closed by a gradient model with turbulent diffusivity $D_T$~\cite{lecture10}. The problem is the last term. The reaction rate is an exponential function of temperature and a product of concentrations (Chapter~\ref{ch:kinetics}), and \emph{the mean of this nonlinear function is not the function of the means}: $\avg{\dot\omega_k}\ne\dot\omega_k(\favg{T},\favg{Y}_k)$, often by orders of magnitude, because the strong Arrhenius nonlinearity means rare high-temperature fluctuations dominate the average~\cite{lecture10,veynante2002turbulent}. This is the central, irreducible difficulty of turbulent combustion modelling, and it is equally true for RANS and LES; the model families below are essentially different strategies for supplying $\avg{\dot\omega_k}$~\cite{lecture10}.
+
+\begin{keybox}
+\keyhead{The one hard term}
+$\displaystyle \avg{\dot\omega_k}\neq\dot\omega_k(\favg T,\favg Y_k)$. Closing the mean (or filtered) reaction rate, not the transport, is what turbulent combustion modelling is about~\cite{lecture10,veynante2002turbulent}.
+\end{keybox}
+
+\section{DNS, RANS and LES, and the burning velocities}
+
+There is a hierarchy of approaches. \textbf{DNS} resolves every turbulence scale and uses the Arrhenius rate directly, needing no combustion model, but is restricted to small domains and simple chemistry by its cost. \textbf{RANS} solves for statistically averaged fields, \textbf{LES} filters the equations and resolves the large eddies while modelling the subgrid scales~\cite{lecture10,pope2000turbulent}. The three see different flame speeds: the DNS speed $s_{dns}$ is the propagation of the instantaneous iso-contour relative to the reactants; the LES subgrid speed $s_{t,\Delta}$ that of the resolved front relative to the resolved reactants; and the RANS speed $s_T$ that of the whole turbulent flame brush relative to the mean reactants, with $s_{dns}<s_{t,\Delta}<s_T$~\cite{lecture10}. A consistency requirement is that $s_{t,\Delta}\to s_{dns}$ as the filter width $\Delta\to0$, and a good subgrid model for $s_{t,\Delta}$ should reproduce the measured $s_T$ on coarse grids~\cite{lecture10}.
+
+\section{General-purpose closures}
+
+\paragraph{Eddy break-up.} The crudest closure assumes ``mixed is burnt'' --- chemistry much faster than mixing --- so that the rate is limited by the turbulent mixing time $k/\varepsilon$. For a reaction progress (or non-premixed) variable this gives the eddy-break-up form
+\begin{equation}
+\avg{\dot\omega_k}=-C_{EBU}\,\avg{\rho}\,\frac{\varepsilon}{k}\,\avg{Y}_k(1-\avg{Y}_k),
+\label{eq:ebu}
+\end{equation}
+which captures the right scaling but ignores all finite-rate effects~\cite{lecture10,veynante2002turbulent}.
+
+\paragraph{Transported PDF / FDF methods.} The most sophisticated (after DNS), and most expensive, family carries a transport equation for the joint probability density function $\favg P(\boldsymbol\psi;\vv x,t)$ of the thermochemical variables $\boldsymbol\psi=(T,Y_k,\dots)$~\cite{lecture10,veynante2002turbulent}. Its great virtue is that the mean reaction rate then follows \emph{exactly} as a closed integral, $\avg{\dot\omega_k}(\vv x,t)=\int\dot\omega_k(\boldsymbol\psi)\,\favg P(\boldsymbol\psi;\vv x,t)\,\dd\boldsymbol\psi$, because for each realisation the Arrhenius rate is known --- chemistry appears in closed form~\cite{lecture10}. The price is that molecular \emph{micro-mixing} (the effect of nearby fluid on a sample's composition) must be modelled. Pope's Lagrangian Monte-Carlo solution represents the PDF by notional particles (typically 20--50 per cell) whose composition evolves as $\dd\phi_n/\dd t=\dot\omega_n+\text{mixing}$; averaging few particles is numerically noisy, which motivated the Eulerian \textbf{stochastic-fields} method, where as few as 4--8 fields suffice, making transported-PDF affordable enough for LES of both premixed and non-premixed flames~\cite{lecture10,pope2000turbulent}.
+
+\section{Reducing the chemical cost}
+
+All the above still require many scalar transport equations --- 54 for methane with GRI-Mech, growing steeply with fuel size~\cite{lecture10}. Two routes reduce the cost at fixed mesh: \emph{skeletal/reduced mechanisms} that drop unimportant species, and \emph{geometrical or statistical} (manifold) approaches that pre-tabulate the chemistry, described next~\cite{lecture10}. A complementary numerical trick is the \textbf{artificially thickened flame}: the flame is broadened by a thickening factor so it can be resolved on the LES/RANS mesh and the Arrhenius rate used directly as in a DNS, with an efficiency function restoring the correct wrinkling and hence flame speed; the turbulence remains under-resolved, so this is not a DNS~\cite{lecture10}.
+
+\section{Premixed closures: flame surface density and flame-speed closure}
+
+For premixed flames the \textbf{flame surface density} (FSD) approach treats the turbulent flame as a brush separating reactants from products and solves a transport equation for the flame surface area per unit volume in terms of its convection, turbulent production and destruction; the FSD then sets how fast the flame propagates~\cite{lecture10,veynante2002turbulent}. A related strategy is \emph{flame-speed closure}, in which $s_T$ is supplied directly --- by a correlation in RANS, or as part of the subgrid model in LES (Chapter~\ref{ch:turbulence})~\cite{lecture10}.
+
+\section{Flamelet and tabulated-chemistry models}
+
+The most widely used industrial models rest on the \textbf{flamelet assumption}: that turbulence does not alter the \emph{inner} structure of the flame, so the thermochemistry can be separated from the turbulence and pre-computed once from one-dimensional laminar flames~\cite{lecture10,veynante2002turbulent,peters2000turbulent}. The laminar solution is tabulated as a function of a reduced set of variables --- a \emph{progress variable} $c$ for premixed flames, or the \emph{mixture fraction} $Z$ (optionally with the scalar dissipation rate or strain) for non-premixed flames --- and the CFD then needs to transport only those one or two variables, reading all other quantities, including $\dot\omega$, from the table~\cite{lecture10}. To account for the unresolved wrinkling when the cell is larger than the laminar flame, the tabulated rate is convolved with a \textbf{presumed PDF},
+\begin{equation}
+\avg{\dot\omega}=\int_0^1\dot\omega(c)\,P(c;\favg c,\widetilde{c^{\prime\prime 2}})\,\dd c,
+\label{eq:presumed-pdf}
+\end{equation}
+which requires transporting the variance $\widetilde{c^{\prime\prime 2}}$ (hence extra equations), the PDF shape usually presumed to be a $\beta$-function~\cite{lecture10,veynante2002turbulent}. For stable non-premixed flames all fluctuating quantities can be related to $Z$, making mixture-fraction flamelet modelling very effective, as the Sandia D/E/F flame data illustrate~\cite{lecture10}. The limitations are intrinsic: the chemistry--turbulence decoupling fails at very high turbulence intensity, and the steady-flamelet ``mixed is burnt'' assumption struggles with \emph{slow} chemistry such as \ch{NO_x} and \ch{CO}; adding such effects enlarges the manifold dimension and the number of equations~\cite{lecture10}.
+
+\paragraph{Slow species: a separate \texorpdfstring{NO$_x$}{NOx} equation.} Because \ch{NO_x} forms slowly, its mass fraction cannot be read from the laminar flamelet table as a function of $c$; instead one solves an \emph{additional} transport equation for \ch{NO}, assuming only that the \ch{NO} \emph{source} term is a function of $c$ while \ch{Y_{NO}} itself is not. This builds in the residence-time dependence of \ch{NO_x} formation in a flame or combustor~\cite{lecture10}.
+
+\paragraph{Partially premixed combustion: FGM.} Real combustors are neither fully premixed nor fully non-premixed, so flamelet models are combined into a \textbf{Flamelet Generated Manifold} parametrised by \emph{both} mixture fraction and progress variable~\cite{lecture10}. One may start from non-premixed flamelets and add a progress variable for the approach to equilibrium, or from premixed flamelets spanning a range of equivalence ratios; the premixed source term is identically zero outside the flammability limits, while the non-premixed source term is not, and an assumed joint PDF supplies the turbulent average~\cite{lecture10}. The method has been extended to heat loss, ignition delay and dilution~\cite{lecture10}.
+
+\section{Gradient and counter-gradient turbulent transport}
+
+A subtle but important point from the Veynante--Vervisch review concerns the turbulent scalar flux closed so casually in Eq.~\eqref{eq:favre-species}~\cite{veynante2002turbulent}. The gradient-diffusion hypothesis assumes the flux opposes the mean gradient, as molecular diffusion does. But in a premixed flame the thermal expansion accelerates the light burnt gas more than the heavy unburnt gas, and this can drive the scalar flux \emph{up} the mean gradient --- \textbf{counter-gradient transport} --- the opposite of what a gradient model predicts. Whether transport is gradient or counter-gradient depends on the ratio of the heat-release-induced acceleration to the turbulence intensity (broadly, counter-gradient at low $u'/\sLz$ and high heat release, gradient at high turbulence). A gradient closure can therefore be qualitatively wrong, which is one more reason the simple form of Eq.~\eqref{eq:favre-species} is only a starting point~\cite{veynante2002turbulent}.
+
+\section{What to expect, and the modelling compromise}
+
+The recurring lesson of the lecture is sobering: even advanced methods struggle to match measurements closely, and a poor prediction can stem from non-representative flamelets or an inaccurate presumed PDF, with consequences for both flame speed and emissions~\cite{lecture10}. The choice of model is always a compromise between accuracy and cost --- many of the more rigorous methods remain too expensive for full gas-turbine combustors --- and because chemistry and turbulence--flame interaction require different treatments, and real combustors operate in a \emph{mixed} premixed/non-premixed mode, a single simulation may need to combine several modelling choices~\cite{lecture10}. This is the modelling context within which the practical emissions and combustor-design questions of the following chapters are posed.

@@ -1,0 +1,49 @@
+
+\begin{thenomenclature} 
+\nomgroup{A}
+  \item [{$\alpha$}]\begingroup Thermal diffusivity [m$^2$\,s$^{-1}$]\nomeqref {0}\nompageref{1}
+  \item [{$\chi$}]\begingroup Scalar dissipation rate [s$^{-1}$]\nomeqref {0}\nompageref{1}
+  \item [{$\Delta H_R$}]\begingroup Enthalpy (heat) of reaction [J\,mol$^{-1}$]\nomeqref {0}\nompageref{1}
+  \item [{$\Delta h_{f}^{0}$}]\begingroup Standard enthalpy of formation [J\,kg$^{-1}$ or J\,mol$^{-1}$]\nomeqref {0}\nompageref{1}
+  \item [{$\delta_L$}]\begingroup Laminar flame thickness [m]\nomeqref {0}\nompageref{1}
+  \item [{$\dot m$}]\begingroup Mass flow rate [kg\,s$^{-1}$]\nomeqref {0}\nompageref{1}
+  \item [{$\dot\omega_k$}]\begingroup Net chemical production rate of species $k$ [kg\,m$^{-3}$\,s$^{-1}$]\nomeqref {0}\nompageref{1}
+  \item [{$\ell_t$}]\begingroup Integral length scale of turbulence [m]\nomeqref {0}\nompageref{1}
+  \item [{$\eta_k$}]\begingroup Kolmogorov length scale [m]\nomeqref {0}\nompageref{1}
+  \item [{$\kappa$}]\begingroup Flame stretch rate [s$^{-1}$]\nomeqref {0}\nompageref{1}
+  \item [{$\lambda$}]\begingroup Thermal conductivity [W\,m$^{-1}$\,K$^{-1}$]\nomeqref {0}\nompageref{1}
+  \item [{$\mu$}]\begingroup Dynamic viscosity [Pa\,s]\nomeqref {0}\nompageref{1}
+  \item [{$\nu_k',\ \nu_k''$}]\begingroup Stoichiometric coefficients (reactant / product)\nomeqref {0}\nompageref{1}
+  \item [{$\phi$}]\begingroup Equivalence ratio\nomeqref {0}\nompageref{1}
+  \item [{$\rho$}]\begingroup Density [kg\,m$^{-3}$]\nomeqref {0}\nompageref{1}
+  \item [{$\tau_c,\ \tau_t$}]\begingroup Chemical / turbulent (integral) time scale [s]\nomeqref {0}\nompageref{1}
+  \item [{$\varepsilon$}]\begingroup Turbulent kinetic energy dissipation rate [m$^2$\,s$^{-3}$]\nomeqref {0}\nompageref{1}
+  \item [{$A$}]\begingroup Pre-exponential (frequency) factor; also area [m$^2$]\nomeqref {0}\nompageref{1}
+  \item [{$c$}]\begingroup Reaction progress variable (premixed), $0\le c\le1$\nomeqref {0}\nompageref{1}
+  \item [{$c_p,\ c_v$}]\begingroup Specific heat at constant pressure / volume [J\,kg$^{-1}$\,K$^{-1}$]\nomeqref {0}\nompageref{1}
+  \item [{$D_k$}]\begingroup Mass diffusion coefficient of species $k$ [m$^2$\,s$^{-1}$]\nomeqref {0}\nompageref{1}
+  \item [{$E_a$}]\begingroup Activation energy [J\,mol$^{-1}$]\nomeqref {0}\nompageref{1}
+  \item [{$G$}]\begingroup Gibbs free energy [J]\nomeqref {0}\nompageref{1}
+  \item [{$h$}]\begingroup Specific enthalpy [J\,kg$^{-1}$]\nomeqref {0}\nompageref{1}
+  \item [{$k$}]\begingroup Reaction rate coefficient; turbulent kinetic energy [m$^2$\,s$^{-2}$]\nomeqref {0}\nompageref{1}
+  \item [{$K_p,\ K_c$}]\begingroup Equilibrium constant (pressure / concentration based)\nomeqref {0}\nompageref{1}
+  \item [{$p$}]\begingroup Pressure [Pa]\nomeqref {0}\nompageref{1}
+  \item [{$R_0$}]\begingroup Universal gas constant, $8.314$ J\,mol$^{-1}$\,K$^{-1}$\nomeqref {0}\nompageref{1}
+  \item [{$s_L$}]\begingroup Laminar burning (flame) velocity [m\,s$^{-1}$]\nomeqref {0}\nompageref{1}
+  \item [{$s_T$}]\begingroup Turbulent burning velocity [m\,s$^{-1}$]\nomeqref {0}\nompageref{1}
+  \item [{$T$}]\begingroup Temperature [K]\nomeqref {0}\nompageref{1}
+  \item [{$T_{\mathrm{ad}}$}]\begingroup Adiabatic flame temperature [K]\nomeqref {0}\nompageref{1}
+  \item [{$u'$}]\begingroup Turbulence intensity (r.m.s.\ velocity) [m\,s$^{-1}$]\nomeqref {0}\nompageref{1}
+  \item [{$W,\ W_k$}]\begingroup Mean / species $k$ molar mass [kg\,mol$^{-1}$]\nomeqref {0}\nompageref{1}
+  \item [{$X_k$}]\begingroup Mole fraction of species $k$\nomeqref {0}\nompageref{1}
+  \item [{$Y_k$}]\begingroup Mass fraction of species $k$\nomeqref {0}\nompageref{1}
+  \item [{$Z$}]\begingroup Mixture fraction; $Z_{\mathrm{st}}$ stoichiometric value\nomeqref {0}\nompageref{1}
+  \item [{Da}]\begingroup Damk\"ohler number, $\tau_t/\tau_c$\nomeqref {0}\nompageref{1}
+  \item [{Ka}]\begingroup Karlovitz number, $\tau_c/\tau_\eta$\nomeqref {0}\nompageref{1}
+  \item [{Le}]\begingroup Lewis number, $\alpha/D$\nomeqref {0}\nompageref{1}
+  \item [{LHV}]\begingroup Lower heating value [J\,kg$^{-1}$]\nomeqref {0}\nompageref{1}
+  \item [{Pr}]\begingroup Prandtl number, $\nu/\alpha$\nomeqref {0}\nompageref{1}
+  \item [{Re}]\begingroup Reynolds number\nomeqref {0}\nompageref{1}
+  \item [{Sc}]\begingroup Schmidt number, $\nu/D$\nomeqref {0}\nompageref{1}
+
+\end{thenomenclature}

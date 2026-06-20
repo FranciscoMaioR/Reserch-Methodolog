@@ -1,0 +1,146 @@
+\contentsline {chapter}{How to use this guide}{1}{chapter*.3}%
+\contentsline {chapter}{\numberline {1}Combustion in Propulsion and Power, and Why It Is Hard}{2}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Why combustion still matters}{2}{section.1.1}%
+\contentsline {section}{\numberline {1.2}What makes a reacting flow different}{2}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Combustor architecture and requirements}{3}{section.1.3}%
+\contentsline {section}{\numberline {1.4}A taxonomy of combustion}{4}{section.1.4}%
+\contentsline {section}{\numberline {1.5}A little history}{5}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Three levels of analysis: the roadmap of this guide}{5}{section.1.6}%
+\contentsline {chapter}{\numberline {2}Thermodynamics of Combustion and Chemical Equilibrium}{7}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Perfect gases, the laws of thermodynamics, and why combustors run at constant pressure}{7}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Heat capacity and why it varies}{7}{section.2.2}%
+\contentsline {section}{\numberline {2.3}The types of enthalpy and the heat of reaction}{8}{section.2.3}%
+\contentsline {section}{\numberline {2.4}The adiabatic flame temperature}{9}{section.2.4}%
+\contentsline {paragraph}{Equivalence ratio.}{10}{section*.8}%
+\contentsline {paragraph}{Pressure.}{10}{section*.9}%
+\contentsline {paragraph}{Inlet temperature.}{10}{section*.10}%
+\contentsline {paragraph}{Process and fuel.}{10}{section*.11}%
+\contentsline {section}{\numberline {2.5}Chemical equilibrium and free energy}{10}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}From the second law to the Gibbs function}{10}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}The law of mass action and the equilibrium constant}{11}{subsection.2.5.2}%
+\contentsline {subsection}{\numberline {2.5.3}Le Chatelier's principle: pressure and preheat revisited}{11}{subsection.2.5.3}%
+\contentsline {subsection}{\numberline {2.5.4}When equilibrium is and is not enough}{11}{subsection.2.5.4}%
+\contentsline {chapter}{\numberline {3}Chemical Kinetics}{12}{chapter.3}%
+\contentsline {section}{\numberline {3.1}When does finite-rate chemistry matter?}{12}{section.3.1}%
+\contentsline {section}{\numberline {3.2}The reaction rate and the law of mass action}{12}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Collision theory and the Arrhenius law}{13}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Elementary reactions, radicals and the construction of a mechanism}{13}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Auto-ignition, chain explosions and explosion limits}{14}{section.3.5}%
+\contentsline {paragraph}{Ignition delay.}{14}{section*.13}%
+\contentsline {section}{\numberline {3.6}Mechanisms in practice}{15}{section.3.6}%
+\contentsline {chapter}{\numberline {4}Governing Equations and Molecular Transport}{16}{chapter.4}%
+\contentsline {section}{\numberline {4.1}What is conserved, and the control-volume idea}{16}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Mass and momentum}{16}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Species mass and the diffusion velocity}{17}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Energy}{17}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Modelling the species diffusive flux}{17}{section.4.5}%
+\contentsline {section}{\numberline {4.6}The transport analogy and the dimensionless groups}{18}{section.4.6}%
+\contentsline {section}{\numberline {4.7}The constant-Lewis-number model and why $\mathrm {Le}\ne 1$ matters}{18}{section.4.7}%
+\contentsline {section}{\numberline {4.8}Equations of state and closing the system}{18}{section.4.8}%
+\contentsline {section}{\numberline {4.9}Convection, diffusion and reaction in balance}{19}{section.4.9}%
+\contentsline {chapter}{\numberline {5}Laminar Premixed Flames}{20}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Structure and the idealised propagating flame}{20}{section.5.1}%
+\contentsline {section}{\numberline {5.2}The progress variable}{21}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Flame thickness: two definitions}{21}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Three definitions of flame speed}{21}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Estimating the laminar burning velocity: thermal flame theory}{22}{section.5.5}%
+\contentsline {section}{\numberline {5.6}How the laminar burning velocity depends on the mixture}{22}{section.5.6}%
+\contentsline {section}{\numberline {5.7}Deflagration and detonation: the Rankine--Hugoniot picture}{22}{section.5.7}%
+\contentsline {section}{\numberline {5.8}Flame stabilisation, flashback and blow-off}{23}{section.5.8}%
+\contentsline {chapter}{\numberline {6}Laminar Non-Premixed (Diffusion) Flames}{25}{chapter.6}%
+\contentsline {section}{\numberline {6.1}The mixture fraction}{25}{section.6.1}%
+\contentsline {section}{\numberline {6.2}The stoichiometric mixture fraction and the flame location}{26}{section.6.2}%
+\contentsline {paragraph}{Bilger's element-based mixture fraction.}{26}{section*.17}%
+\contentsline {section}{\numberline {6.3}The Burke--Schumann limit: ``mixed is burned''}{26}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Departures from equilibrium and the flamelet model}{27}{section.6.4}%
+\contentsline {paragraph}{Limiting cases.}{27}{section*.19}%
+\contentsline {section}{\numberline {6.5}Why diffusion flames respond immediately to strain}{28}{section.6.5}%
+\contentsline {section}{\numberline {6.6}The candle: the canonical laminar diffusion flame}{28}{section.6.6}%
+\contentsline {chapter}{\numberline {7}Flame Stretch, Curvature and Intrinsic Instabilities}{29}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Definition of stretch}{29}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Stretch on an infinitely thin flame: the hydrodynamic limit}{29}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Finite-thickness flames: moderate versus large stretch}{30}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Markstein length and differential diffusion}{30}{section.7.4}%
+\contentsline {section}{\numberline {7.5}Stretch in diffusion flames}{31}{section.7.5}%
+\contentsline {section}{\numberline {7.6}Intrinsic flame instabilities}{31}{section.7.6}%
+\contentsline {paragraph}{Hydrodynamic (Darrieus--Landau) instability.}{31}{section*.21}%
+\contentsline {paragraph}{Thermo-diffusive instability.}{31}{section*.22}%
+\contentsline {paragraph}{Body-force (Rayleigh--Taylor) instability.}{32}{section*.23}%
+\contentsline {paragraph}{Consequences.}{32}{section*.24}%
+\contentsline {chapter}{\numberline {8}Turbulence and Turbulent Transport}{33}{chapter.8}%
+\contentsline {section}{\numberline {8.1}The qualitative effect of turbulence}{33}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Eddies and the energy cascade}{33}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Integral scales and the turbulent Reynolds number}{34}{section.8.3}%
+\contentsline {section}{\numberline {8.4}The Kolmogorov scales}{34}{section.8.4}%
+\contentsline {section}{\numberline {8.5}Turbulent transport and the closure problem}{35}{section.8.5}%
+\contentsline {section}{\numberline {8.6}Comparing flame and turbulence scales: Damk\"ohler and Karlovitz numbers}{35}{section.8.6}%
+\contentsline {section}{\numberline {8.7}The premixed combustion regime diagram}{35}{section.8.7}%
+\contentsline {section}{\numberline {8.8}The turbulent burning velocity}{36}{section.8.8}%
+\contentsline {chapter}{\numberline {9}Turbulent Combustion and Its Modelling}{37}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Why turbulent combustion CFD is hard}{37}{section.9.1}%
+\contentsline {section}{\numberline {9.2}The closure problem: the mean reaction rate}{37}{section.9.2}%
+\contentsline {section}{\numberline {9.3}DNS, RANS and LES, and the burning velocities}{38}{section.9.3}%
+\contentsline {section}{\numberline {9.4}General-purpose closures}{38}{section.9.4}%
+\contentsline {paragraph}{Eddy break-up.}{38}{section*.27}%
+\contentsline {paragraph}{Transported PDF / FDF methods.}{38}{section*.28}%
+\contentsline {section}{\numberline {9.5}Reducing the chemical cost}{38}{section.9.5}%
+\contentsline {section}{\numberline {9.6}Premixed closures: flame surface density and flame-speed closure}{39}{section.9.6}%
+\contentsline {section}{\numberline {9.7}Flamelet and tabulated-chemistry models}{39}{section.9.7}%
+\contentsline {paragraph}{Slow species: a separate NO$_x$ equation.}{39}{section*.29}%
+\contentsline {paragraph}{Partially premixed combustion: FGM.}{39}{section*.30}%
+\contentsline {section}{\numberline {9.8}Gradient and counter-gradient turbulent transport}{39}{section.9.8}%
+\contentsline {section}{\numberline {9.9}What to expect, and the modelling compromise}{40}{section.9.9}%
+\contentsline {chapter}{\numberline {10}Experimental Methods and Laser Diagnostics}{41}{chapter.10}%
+\contentsline {section}{\numberline {10.1}What to measure, and the requirements}{41}{section.10.1}%
+\contentsline {section}{\numberline {10.2}Intrusive probes}{42}{section.10.2}%
+\contentsline {section}{\numberline {10.3}Measuring the laminar flame speed}{42}{section.10.3}%
+\contentsline {section}{\numberline {10.4}Autoignition and flashback diagnostics}{42}{section.10.4}%
+\contentsline {section}{\numberline {10.5}Spectroscopy and light--matter interaction}{43}{section.10.5}%
+\contentsline {section}{\numberline {10.6}Chemiluminescence}{43}{section.10.6}%
+\contentsline {section}{\numberline {10.7}Lasers and how they work}{43}{section.10.7}%
+\contentsline {section}{\numberline {10.8}Laser-based techniques}{44}{section.10.8}%
+\contentsline {paragraph}{Absorption (TDLAS).}{44}{section*.31}%
+\contentsline {paragraph}{Laser-induced fluorescence (LIF).}{44}{section*.32}%
+\contentsline {paragraph}{Scattering.}{44}{section*.33}%
+\contentsline {paragraph}{Reconstructing line-of-sight data: the Abel transform.}{44}{section*.34}%
+\contentsline {chapter}{\numberline {11}Pollutant Formation: NO$_x$, CO, UHC and Soot}{46}{chapter.11}%
+\contentsline {section}{\numberline {11.1}The aircraft emissions inventory and its climate impact}{46}{section.11.1}%
+\contentsline {section}{\numberline {11.2}Carbon monoxide and unburnt hydrocarbons}{46}{section.11.2}%
+\contentsline {section}{\numberline {11.3}Soot}{47}{section.11.3}%
+\contentsline {subsection}{\numberline {11.3.1}What soot is}{47}{subsection.11.3.1}%
+\contentsline {subsection}{\numberline {11.3.2}The formation pathway}{47}{subsection.11.3.2}%
+\contentsline {subsection}{\numberline {11.3.3}What controls soot}{47}{subsection.11.3.3}%
+\contentsline {subsection}{\numberline {11.3.4}Reducing soot}{48}{subsection.11.3.4}%
+\contentsline {section}{\numberline {11.4}Oxides of nitrogen}{48}{section.11.4}%
+\contentsline {subsection}{\numberline {11.4.1}A non-equilibrium, Arrhenius-controlled process}{48}{subsection.11.4.1}%
+\contentsline {paragraph}{Thermal (Zeldovich) NO.}{48}{section*.36}%
+\contentsline {paragraph}{Prompt (Fenimore) NO.}{49}{section*.37}%
+\contentsline {paragraph}{The N$_2$O route.}{49}{section*.38}%
+\contentsline {subsection}{\numberline {11.4.2}What controls NO$_x$, and the regulations}{49}{subsection.11.4.2}%
+\contentsline {subsection}{\numberline {11.4.3}Reducing NO$_x$}{49}{subsection.11.4.3}%
+\contentsline {section}{\numberline {11.5}The soot--NO$_x$--CO trade-off}{50}{section.11.5}%
+\contentsline {chapter}{\numberline {12}Practical Combustion Systems and Aero-Engine Combustors}{51}{chapter.12}%
+\contentsline {section}{\numberline {12.1}Characteristics of the aero-engine combustor}{51}{section.12.1}%
+\contentsline {section}{\numberline {12.2}Architecture and the combustion zones}{51}{section.12.2}%
+\contentsline {section}{\numberline {12.3}Design parameters}{52}{section.12.3}%
+\contentsline {section}{\numberline {12.4}Flame stabilisation and the operating envelope}{52}{section.12.4}%
+\contentsline {section}{\numberline {12.5}Combustion mode: diffusion versus lean premixed}{53}{section.12.5}%
+\contentsline {section}{\numberline {12.6}Low-emission combustor concepts}{53}{section.12.6}%
+\contentsline {paragraph}{Single annular combustor (SAC).}{53}{section*.41}%
+\contentsline {paragraph}{Staged combustors (double-annular, axially staged).}{53}{section*.42}%
+\contentsline {paragraph}{Rich-Quench-Lean (RQL).}{53}{section*.43}%
+\contentsline {paragraph}{Lean Premixed Prevaporised (LPP).}{53}{section*.44}%
+\contentsline {paragraph}{Lean Direct Injection (LDI).}{53}{section*.45}%
+\contentsline {paragraph}{TAPS.}{54}{section*.46}%
+\contentsline {subsection}{\numberline {12.6.1}Rich versus lean: the soot picture}{54}{subsection.12.6.1}%
+\contentsline {chapter}{\numberline {13}Hydrogen Combustion for Aviation}{55}{chapter.13}%
+\contentsline {section}{\numberline {13.1}Why hydrogen, and in what form}{55}{section.13.1}%
+\contentsline {section}{\numberline {13.2}Hydrogen as a fuel: properties and the ``not drop-in'' problem}{55}{section.13.2}%
+\contentsline {section}{\numberline {13.3}The three coupled challenges}{56}{section.13.3}%
+\contentsline {paragraph}{Thermoacoustic coupling.}{56}{section*.49}%
+\contentsline {section}{\numberline {13.4}Intrinsic instabilities of hydrogen flames}{57}{section.13.4}%
+\contentsline {section}{\numberline {13.5}Modelling hydrogen flames}{57}{section.13.5}%
+\contentsline {section}{\numberline {13.6}Low-NO$_x$ combustor technologies for hydrogen}{58}{section.13.6}%
+\contentsline {section}{\numberline {13.7}Design strategies to prevent flashback and instabilities}{59}{section.13.7}%
+\contentsline {section}{\numberline {13.8}Outlook}{59}{section.13.8}%
+\contentsline {chapter}{\numberline {14}Bibliography}{60}{chapter.14}%

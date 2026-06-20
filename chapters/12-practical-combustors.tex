@@ -1,0 +1,67 @@
+\chapter{Practical Combustion Systems and Aero-Engine Combustors}\label{ch:combustors}
+
+This chapter turns the physics of the preceding chapters into hardware: the aero-engine combustor, its requirements and architecture, the parameters that drive its design, and the low-emission concepts that respond to the soot--\ch{NO_x}--\ch{CO} trade-off of Chapter~\ref{ch:emissions}. It follows Lecture~13, with the combustor requirements of Lecture~4 and the gas-turbine context of Kurzke \& Halliwell and Lefebvre \& Ballal~\cite{lecture13,lecture4,Kurzke2018,lefebvre2010gas}.
+
+\section{Characteristics of the aero-engine combustor}
+
+The combustor adds heat between the compressor and the turbine, and its operating characteristics are demanding~\cite{lecture13}. Combustion is primarily \emph{turbulent}; an external spark is needed only to light off, after which the flame is self-sustaining; the process is nearly \emph{constant pressure}, with total-pressure losses limited (about \SI{4}{\percent} at cruise, \SI{7}{\percent} at take-off) because every percent of loss costs cycle performance (Chapter~\ref{ch:intro}). The combustor is remarkably compact and intense --- volumetric heat-release intensities up to $\sim\SI{150}{MW\,atm^{-1}\,m^{-3}}$ --- and must keep residence time \emph{low} ($\sim\SI{5}{ms}$) precisely to limit thermal \ch{NO_x}, while extracting no work and rejecting no heat (it is insulated, since heat loss penalises the cycle)~\cite{lecture13}. Conditions are severe: aircraft combustors run at up to \SIrange{40}{60}{bar} and inlet temperatures above \SI{900}{K}, on kerosene or synthetic liquid fuels~\cite{lecture13}. These characteristics restate, in hardware terms, the requirements listed in Chapter~\ref{ch:intro}: high efficiency, stability, reliable ignition and relight, low pressure loss, a turbine-friendly exit temperature profile, low emissions, and low cost~\cite{lecture4,lecture13}.
+
+\section{Architecture and the combustion zones}
+
+Air leaves the compressor at high pressure but at a Mach number far too high to hold a flame, so the combustor begins with a \textbf{diffuser} (conical or dump type) that decelerates the flow~\cite{lecture13}. The flame is then anchored by a recirculation zone, usually created by \textbf{swirling} the air through a swirler, which produces a central recirculation that returns hot products to ignite the incoming mixture and so stabilises the flame against the through-flow~\cite{lecture13,lecture4}. The combustor is conventionally divided into zones: a \emph{primary} zone where the fuel burns near stoichiometric for stability; an \emph{intermediate/secondary} zone where burnout of \ch{CO} and soot is completed; and a \emph{dilution} zone where the remaining air is mixed in to drop the temperature to the turbine-entry value and shape the exit temperature distribution (the \emph{pattern factor}, kept uniform to avoid hot spots that would damage the turbine)~\cite{lecture13,lefebvre2010gas}. The liner separating the hot gas from the cooling air is itself a major design problem, cooled by film, effusion or impingement schemes and protected by thermal-barrier coatings~\cite{lecture13}.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.6\linewidth]{fig_combustor}
+\caption{Architecture of a gas-turbine combustor, showing the diffuser, swirl-stabilised primary zone and dilution zone~\cite{lecture13}.}
+\label{fig:fig_combustor}
+\end{figure}
+
+\section{Design parameters}
+
+Lecture~13 organises combustor design as a tree of coupled choices --- the ``selection fish'' --- of which the principal branches are~\cite{lecture13}:
+\begin{itemize}[leftmargin=1.5em,itemsep=2pt]
+\item \textbf{Air diffusion} (conical vs dump diffuser) to recover pressure with minimum loss.
+\item \textbf{Fuel injection} --- pressure-swirl atomiser, air-blast atomiser, or vaporiser --- governing droplet size and hence evaporation and mixing.
+\item \textbf{Flame stabilisation} by swirl, vortex and recirculation.
+\item \textbf{Air mixing and pattern factor}, controlling the exit temperature uniformity.
+\item \textbf{Combustor cooling} (film, effusion, jet impingement, thermal-barrier coatings).
+\item \textbf{Fuel evaporation and mixing}, including the heat-up period, evaporation and ignition delay.
+\item \textbf{Part-load operation and relight}, including \ch{CO} and soot oxidation at low power.
+\item \textbf{Emission philosophy} --- the choice between rich and lean strategies and between staging schemes.
+\item \textbf{Residence time} and \textbf{thermoacoustics}, the latter the self-excited coupling of heat release and acoustics that can destroy hardware and is a recurring constraint (Chapter~\ref{ch:premixed}).
+\end{itemize}
+At the configuration level the combustor may be a \textbf{can}, \textbf{can-annular}, \textbf{annular} or \textbf{silo} type, in straight-through or reverse-flow arrangement; modern aero-engines almost universally use the compact annular form~\cite{lecture13}.
+
+\section{Flame stabilisation and the operating envelope}
+
+A practical combustor must remain alight across a wide range of fuel-air ratios and mass flows --- the \emph{operating envelope} bounded by lean blow-out at one extreme and rich/unstable operation at the other~\cite{lecture13}. The swirl-induced recirculation zone provides the anchoring; as the mixture is leaned (from $\phi\approx0.8$ toward $0.55$ and below) the flame weakens and approaches blow-out, which is why lean-burn concepts, attractive for \ch{NO_x}, must work hard to retain stability~\cite{lecture13}. This is the same physics as the laminar stabilisation and flashback/blow-off of Chapter~\ref{ch:premixed}, now in a turbulent, swirling, high-pressure setting.
+
+\section{Combustion mode: diffusion versus lean premixed}
+
+The single most consequential choice is the combustion mode, which inherits the trade-offs of Chapter~\ref{ch:emissions}~\cite{lecture13}. \textbf{Diffusion} burning (near $\phi\approx1$) gives a broad operating envelope, freedom from flashback, very stable and reliable ignition and easy \ch{CO} control, but \emph{high} \ch{NO_x} and soot. \textbf{Premixed} burning (at a selected lean $\phi$) gives \emph{low} \ch{NO_x} and soot, but a narrow envelope, proneness to flashback and thermoacoustic instability, unreliable ignition and difficult \ch{CO} control~\cite{lecture13}. The low-emission combustor concepts below are essentially different ways of capturing the emissions benefit of lean/premixed combustion while managing its stability and flashback penalties.
+
+\section{Low-emission combustor concepts}
+
+\paragraph{Single annular combustor (SAC).} The conventional design: a single diffusion-stabilised annular flame, simple and robust but high in \ch{NO_x} and soot~\cite{lecture13}.
+
+\paragraph{Staged combustors (double-annular, axially staged).} Splitting the combustion into a \emph{pilot} stage (kept alight for stability at low power) and a \emph{main} stage (lean, for low \ch{NO_x} at high power) improves both efficiency, through better fuel-air mixing, and stability; the double-annular combustor places the two stages radially, axially staged designs place them in series, and both reduce \ch{NO_x} relative to the SAC across the power range~\cite{lecture13}.
+
+\paragraph{Rich-Quench-Lean (RQL).} The RQL concept sidesteps the high-\ch{NO_x} stoichiometric peak by burning first \emph{rich} (low \ch{NO_x} because oxygen is scarce and temperature moderate, though soot-forming), then \emph{quickly quenching} with a rapid jet of dilution air, then completing combustion \emph{lean}~\cite{lecture13}. The decisive feature is the \emph{quick} quench: the mixture must traverse the high-\ch{NO_x} stoichiometric region as fast as possible to avoid a thermal-\ch{NO_x} spike. Increasing the rich-zone length lowers the maximum temperature; the soot formed in the rich zone is intended to oxidise in the lean zone, so the rich-zone length and quench temperature must be tuned to minimise both soot and \ch{NO_x} --- a direct embodiment of the trade-off~\cite{lecture13}.
+
+\paragraph{Lean Premixed Prevaporised (LPP).} The lowest-\ch{NO_x} concept in principle: the liquid fuel is fully \emph{prevaporised}, \emph{premixed} with excess air, and burned \emph{lean}, giving a uniform, cool flame with little thermal \ch{NO_x} or soot~\cite{lecture13}. Its weakness is the premixing duct itself, which is vulnerable to auto-ignition and flashback (Chapters~\ref{ch:premixed},~\ref{ch:diagnostics}) and to thermoacoustic instability --- risks that grow with pressure and with hydrogen.
+
+\paragraph{Lean Direct Injection (LDI).} LDI avoids the premixing hazard by injecting fuel and air \emph{separately and directly} into the combustion zone at an equivalence ratio close to lean blow-out, with all the combustion air entering the front end and no dilution zone~\cite{lecture13}. Because there is no premixing duct, the chance of auto-ignition and flashback is reduced, at the cost of relying on very rapid in-zone mixing to stay lean and avoid local hot spots.
+
+\paragraph{TAPS.} The Twin Annular Premixing Swirler combines staging and premixing: two concentric swirler passages give staged fuel injection, the fuel and air are premixed, and the swirling flow enhances both mixing and stabilisation --- a production low-emission architecture~\cite{lecture13}.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.8\linewidth]{fig_lowemission}
+\caption{Overview of aero-engine combustor concepts: single annular, double annular, RQL, lean premixed prevaporised and lean direct injection~\cite{lecture13}.}
+\label{fig:fig_lowemission}
+\end{figure}
+
+\subsection{Rich versus lean: the soot picture}
+
+Surveying these concepts, the rich-front designs (SAC, double-annular, RQL) and the lean designs (LDI, LPP) sit on opposite sides of the soot ledger: lean combustors, which never run rich, produce far less non-volatile particulate matter (soot) than rich-front combustors, while both can achieve low \ch{NO_x} if the high-temperature residence is controlled~\cite{lecture13,lecture12}. The trend in aero-engine combustor development has accordingly been from the diffusion SAC toward staged and lean concepts (RQL, axially staged, TAPS, LDI, multipoint LDI), each a different compromise on the selection fish between emissions, stability, flashback resistance and complexity~\cite{lecture13}. This sets up the final chapter, where the same concepts must be re-examined for a fuel --- hydrogen --- that changes every one of the underlying flame properties.

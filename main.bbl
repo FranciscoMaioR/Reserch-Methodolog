@@ -1,0 +1,276 @@
+\begin{thebibliography}{10}
+
+\bibitem{lecture1}
+F.~{De Domenico}, G.~Kelesidis, and I.~Langella.
+\newblock Lecture 1: Introduction.
+\newblock Lecture slides, AE4262 Combustion for Propulsion and Power
+  Technologies, 2026.
+
+\bibitem{warnatz2006combustion}
+J{\"u}rgen Warnatz, Ulrich Maas, and Robert~W. Dibble.
+\newblock {\em Combustion: Physical and Chemical Fundamentals, Modeling and
+  Simulation, Experiments, Pollutant Formation}.
+\newblock Springer, Berlin, Heidelberg, 4th edition, 2006.
+
+\bibitem{maas_combustion_lecture}
+Ulrich Maas.
+\newblock Chemistry and physics of combustion: Lecture notes.
+\newblock Unpublished lecture notes for students attending the course.
+
+\bibitem{glassman2014combustion}
+Irvin Glassman, Richard~A. Yetter, and Nicholas~G. Glumac.
+\newblock {\em Combustion}.
+\newblock Academic Press, Boston, MA, 5 edition, 2014.
+
+\bibitem{Langella_LectureNotes}
+Ivan Langella.
+\newblock Combustion for propulsion and power: Lecture notes for lectures 1 \&
+  2.
+\newblock Unpublished lecture notes, with contributions from Gioele Ferrante
+  and Alessandro Porcarelli.
+
+\bibitem{kuo2005conservation}
+Kenneth~K. Kuo.
+\newblock {\em The Conservation Equations for Multicomponent Reacting Systems},
+  chapter~3, pages 285--337.
+\newblock John Wiley \& Sons, 2nd edition, 2005.
+
+\bibitem{turns2000introduction}
+Stephen~R. Turns.
+\newblock {\em An Introduction to Combustion: Concepts and Applications}.
+\newblock McGraw-Hill, Boston, MA, 2nd edition, 2000.
+
+\bibitem{peters2000turbulent}
+Norbert Peters.
+\newblock {\em Turbulent Combustion}.
+\newblock Cambridge University Press, Cambridge, 2000.
+
+\bibitem{pope2000turbulent}
+Stephen~B. Pope.
+\newblock {\em Turbulent Flows}.
+\newblock Cambridge University Press, Cambridge, 2000.
+
+\bibitem{veynante2002turbulent}
+Denis Veynante and Luc Vervisch.
+\newblock Turbulent combustion modeling.
+\newblock {\em Progress in Energy and Combustion Science}, 28(3):193--266,
+  2002.
+
+\bibitem{Law1988}
+C.~K. Law.
+\newblock Dynamics of stretched flames.
+\newblock In {\em Twenty-Second Symposium (International) on Combustion}, pages
+  1381--1402. The Combustion Institute, 1988.
+
+\bibitem{lecture4}
+F.~{De Domenico}, G.~Kelesidis, and I.~Langella.
+\newblock Lecture 4: Basics of flames.
+\newblock Lecture slides, AE4262 Combustion for Propulsion and Power
+  Technologies, 2026.
+
+\bibitem{lecture13}
+A.~{Gangoli Rao}, F.~{De Domenico}, and I.~Langella.
+\newblock Lecture 13: Practical combustion systems ii -- nox emissions and
+  aero-engine combustors.
+\newblock Lecture slides, AE4262 Combustion for Propulsion and Power
+  Technologies, 2026.
+
+\bibitem{transcript_tutorial}
+Francesca {De Domenico} and Ivan Langella.
+\newblock Tutorial recording: Cantera, thermodynamics and kinetics q\&a.
+\newblock Tutorial recording transcript (session of 21 May 2026), AE4262
+  Combustion for Propulsion and Power Technologies, 2026.
+\newblock Cited for spoken clarifications and emphasis.
+
+\bibitem{lecture2}
+F.~{De Domenico}, G.~Kelesidis, and I.~Langella.
+\newblock Lecture 2: Thermodynamics and chemical equilibrium.
+\newblock Lecture slides, AE4262 Combustion for Propulsion and Power
+  Technologies, 2026.
+
+\bibitem{cantera}
+David~G. Goodwin, Harry~K. Moffat, Ingmar Schoegl, Raymond~L. Speth, and
+  Bryan~W. Weber.
+\newblock Cantera: An object-oriented software toolkit for chemical kinetics,
+  thermodynamics, and transport processes.
+\newblock \url{https://www.cantera.org}, 2025.
+\newblock Version 3.1.0.
+
+\bibitem{lecture3}
+F.~{De Domenico}, G.~Kelesidis, and I.~Langella.
+\newblock Lecture 3: Chemical kinetics.
+\newblock Lecture slides, AE4262 Combustion for Propulsion and Power
+  Technologies, 2026.
+
+\bibitem{lecture8}
+F.~{De Domenico}, G.~Kelesidis, and I.~Langella.
+\newblock Lecture 8: Laminar and turbulent transport processes.
+\newblock Lecture slides, AE4262 Combustion for Propulsion and Power
+  Technologies, 2026.
+
+\bibitem{white2016fluid}
+Frank~M. White.
+\newblock {\em Fluid Mechanics}.
+\newblock McGraw-Hill Education, New York, NY, 8 edition, 2016.
+
+\bibitem{day2009cellular}
+M.~S. Day, J.~B. Bell, R.~K. Cheng, S.~Tachibana, V.~E. Beckner, and M.~J.
+  Lijewski.
+\newblock Cellular burning in lean premixed turbulent hydrogen-air flames:
+  Coupling experimental and computational analysis at the laboratory scale.
+\newblock {\em Journal of Physics: Conference Series}, 180:012031, 2009.
+
+\bibitem{lecture9}
+F.~{De Domenico}, G.~Kelesidis, and I.~Langella.
+\newblock Lecture 9: Laminar and turbulent flames.
+\newblock Lecture slides, AE4262 Combustion for Propulsion and Power
+  Technologies, 2026.
+
+\bibitem{lecture5}
+F.~{De Domenico}, G.~Kelesidis, and I.~Langella.
+\newblock Lecture 5: Experimental combustion 1.
+\newblock Lecture slides, AE4262 Combustion for Propulsion and Power
+  Technologies, 2026.
+
+\bibitem{transcript_l9}
+Ivan Langella.
+\newblock Lecture 9 recording: Laminar and turbulent flames.
+\newblock Lecture recording transcript (session of 18 May 2026), AE4262
+  Combustion for Propulsion and Power Technologies, 2026.
+\newblock Cited for spoken clarifications and emphasis.
+
+\bibitem{kiymaz2023quenching}
+Tahsin~Berk K{\i}ymaz, Nijso Beishuizen, and Jeroen van Oijen.
+\newblock Numerical analysis of quenching distance in laminar premixed hydrogen
+  and methane flames.
+\newblock {\em International Journal of Hydrogen Energy}, 48(89):34633--34648,
+  2023.
+
+\bibitem{kalantari2017flashback_3quench}
+Alireza Kalantari and Vincent McDonell.
+\newblock Boundary layer flashback of non-swirling premixed flames: Mechanisms,
+  fundamental research, and recent advances.
+\newblock {\em Progress in Energy and Combustion Science}, 61:249--292, 2017.
+
+\bibitem{lewis1943stability_3quench_original}
+Bernard Lewis and Guenther von Elbe.
+\newblock Stability and structure of burner flames.
+\newblock {\em The Journal of Chemical Physics}, 11(2):75--97, 1943.
+
+\bibitem{lecture6}
+F.~{De Domenico}, I.~Langella, and A.~{Gangoli Rao}.
+\newblock Lecture 6: Experimental combustion 2 (diagnostics).
+\newblock Lecture slides, AE4262 Combustion for Propulsion and Power
+  Technologies, 2026.
+
+\bibitem{poinsot2011theoretical}
+Thierry Poinsot and Denis Veynante.
+\newblock {\em Theoretical and Numerical Combustion}.
+\newblock CERFACS, Toulouse, 3rd edition, 2011.
+
+\bibitem{oppong2022instability}
+Francis Oppong, Cangsu Xu, Xiaolu Li, and Zhongwei Luo.
+\newblock Intrinsic instability of different fuels spherically expanding
+  flames: A review.
+\newblock {\em Fuel Processing Technology}, 234:107325, 2022.
+
+\bibitem{lecture14}
+F.~{De Domenico}, G.~Kelesidis, and I.~Langella.
+\newblock Lecture 14 (part 2): Hydrogen technology ii -- instabilities and
+  low-nox combustor concepts.
+\newblock Lecture slides, AE4262 Combustion for Propulsion and Power
+  Technologies, 2026.
+
+\bibitem{roekaerts2010jmbc}
+Dirk Roekaerts.
+\newblock Introduction to turbulent combustion.
+\newblock In {\em Course on Combustion, {J.M.} Burgerscentrum Research School
+  for Fluid Mechanics}, chapter~8. {J.M.} Burgerscentrum, Delft, 2010.
+\newblock Lecture notes, JMBC course 2010, chapter 8.
+
+\bibitem{ciccarelli2008flame}
+Gaby Ciccarelli and Sergey Dorofeev.
+\newblock Flame acceleration and transition to detonation in ducts.
+\newblock {\em Progress in Energy and Combustion Science}, 34(4):499--550,
+  2008.
+
+\bibitem{lecture10}
+I.~Langella, F.~{De Domenico}, and G.~Kelesidis.
+\newblock Lecture 10: Turbulence--chemistry interaction and modelling.
+\newblock Lecture slides, AE4262 Combustion for Propulsion and Power
+  Technologies, 2026.
+
+\bibitem{lecture7}
+F.~{De Domenico}, I.~Langella, and A.~{Gangoli Rao}.
+\newblock Lecture 7: Experimental combustion -- laser diagnostics.
+\newblock Lecture slides, AE4262 Combustion for Propulsion and Power
+  Technologies, 2026.
+
+\bibitem{AE4262_LabExercise2026}
+A.~Silva~Correia and F.~De~Domenico.
+\newblock Determining the laminar flame speed and emission spectra in laminar
+  {Bunsen} flames.
+\newblock Technical report, Delft University of Technology, May 2026.
+\newblock Laboratory exercise, AE4262 Combustion.
+
+\bibitem{transcript_l7}
+Francesca {De Domenico}.
+\newblock Lecture 7 recording: Experimental combustion and laser diagnostics.
+\newblock Lecture recording transcript (session of 20 May 2026), AE4262
+  Combustion for Propulsion and Power Technologies, 2026.
+\newblock Cited for spoken clarifications and emphasis.
+
+\bibitem{vera2014c2swan}
+L.~P. Vera, J.~A. Pérez, and H.~Riascos.
+\newblock Spectroscopic study of emission coal mineral plasma produced by laser
+  ablation.
+\newblock {\em Journal of Physics: Conference Series}, 511:012063, 2014.
+
+\bibitem{schefer2009visible_hydrogen}
+R.~W. Schefer, W.~D. Kulatilaka, B.~D. Patterson, and T.~B. Settersten.
+\newblock Visible emission of hydrogen flames.
+\newblock {\em Combustion and Flame}, 156(6):1234--1241, 2009.
+
+\bibitem{hitran}
+I.~E. Gordon, L.~S. Rothman, R.~J. Hargreaves, et~al.
+\newblock {HITRAN}2020 molecular spectroscopic database.
+\newblock \url{https://hitran.org}, 2022.
+\newblock $E'' = 1324.318$\,cm$^{-1}$ for OH $QQ\,8.5ef$ line retrieved June
+  2026.
+
+\bibitem{crosley1983}
+David~R. Crosley and Gregory~P. Smith.
+\newblock Laser-induced fluorescence spectroscopy for combustion diagnostics.
+\newblock {\em Optical Engineering}, 22(5):545--553, 1983.
+
+\bibitem{lecture12}
+G.~Kelesidis, F.~{De Domenico}, and I.~Langella.
+\newblock Lecture 12: Practical combustion systems i -- emissions from
+  combustion systems.
+\newblock Lecture slides, AE4262 Combustion for Propulsion and Power
+  Technologies, 2026.
+
+\bibitem{haynes1981soot}
+B.~S. Haynes and H.~Gg. Wagner.
+\newblock Soot formation.
+\newblock {\em Progress in Energy and Combustion Science}, 7(4):229--273, 1981.
+
+\bibitem{lefebvre2010gas}
+Arthur~H. Lefebvre and Dilip~R. Ballal.
+\newblock {\em Gas Turbine Combustion: Alternative Fuels and Emissions}.
+\newblock CRC Press, Boca Raton, FL, 3rd edition, 2010.
+
+\bibitem{Kurzke2018}
+Joachim Kurzke and Ian Halliwell.
+\newblock {\em Propulsion and Power: An Exploration of Gas Turbine Performance
+  Modeling}.
+\newblock Springer, Cham, 2018.
+
+\bibitem{lecture14part1}
+F.~{De Domenico}, I.~Langella, and G.~Kelesidis.
+\newblock Lecture 14 (part 1): Hydrogen combustion -- fuel properties and the
+  case for hydrogen aviation.
+\newblock Lecture slides, AE4262 Combustion for Propulsion and Power
+  Technologies, 2026.
+
+\end{thebibliography}

@@ -1,0 +1,103 @@
+\chapter{Laminar Premixed Flames}\label{ch:premixed}
+
+A premixed flame is the structure that emerges when the convection--diffusion--reaction balance of Eq.~\eqref{eq:cdr-1d} is applied to a homogeneous flammable mixture: a thin front that converts reactants to products, releases heat, and propagates into the fresh gas at a well-defined speed~\cite{lecture9,lecture5}. This chapter develops its structure, the several definitions of flame speed and thickness, the parametric behaviour of the laminar burning velocity, the deflagration/detonation distinction, and the mechanisms by which such flames are stabilised, flash back, blow off or quench.
+
+\section{Structure and the idealised propagating flame}
+
+In the idealised, freely propagating, one-dimensional view the fresh premixed reactants enter from one side and the burnt products leave from the other; across the front the gas undergoes chemical conversion, heat release, a large drop in density, and a corresponding acceleration~\cite{lecture9,lecture5}. The flame remains stationary in the laboratory frame only if its propagation velocity exactly balances the oncoming reactant velocity, $\sLz=-V_u$; if the equality fails the front moves~\cite{lecture5,lecture4}. The internal structure has two layers: a relatively thick \emph{preheat zone}, in which conduction raises the temperature and diffusion supplies radicals but little heat is released, followed by a thin \emph{reaction zone} of intense heat release and short-lived radicals. The preheat zone is governed by the balance of convection and diffusion, the reaction zone by the balance of diffusion and reaction, and it is this coupling that selects a unique propagation speed~\cite{lecture9,warnatz2006combustion}.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.6\linewidth]{fig_premixed_structure}
+\caption{Idealised freely propagating premixed flame: reactants are converted to products across a thin front, with heat release, density drop and acceleration~\cite{lecture9}.}
+\label{fig:fig_premixed_structure}
+\end{figure}
+
+\section{The progress variable}
+
+To compare flames at different conditions it is convenient to introduce a \textbf{progress variable} $c$ that runs from $0$ in the unburnt gas to $1$ in the fully burnt gas, independent of physical position~\cite{transcript_l9}. It is defined as a normalised species mass fraction (or a combination of species), and water vapour is a common choice. The fuel mass fraction is generally a \emph{poor} choice --- except possibly for hydrogen --- because in hydrocarbon combustion the fuel can be entirely consumed before combustion is complete (for example $\ch{CO}+\tfrac12\ch{O_2}\rightarrow\ch{CO_2}$ continues after the fuel is gone), so a fuel-based $c$ would truncate part of the flame~\cite{transcript_l9}. The progress-variable interpretation is strictly meaningful only for an \emph{adiabatic} system with $\Le=1$ for all species; otherwise differential diffusion and heat loss contaminate the mapping between $c$ and the thermochemical state~\cite{transcript_l9}.
+
+\section{Flame thickness: two definitions}
+
+There are two standard measures of flame thickness~\cite{transcript_l9}. The \emph{diffusive} estimate from dimensional analysis is $\delta=\alpha/\sLz$ (thermal diffusivity over flame speed), which is simple but systematically \emph{underestimates} the true thickness. The more accurate and widely used \textbf{thermal (gradient) thickness} is based on the maximum temperature gradient,
+\begin{equation}
+\delta_{th}=\frac{T_b-T_u}{\left|\partial T/\partial x\right|_{\max}},
+\label{eq:thermal-thickness}
+\end{equation}
+the burnt-minus-unburnt temperature difference divided by the steepest gradient through the front~\cite{lecture8,lecture9}. The superscript $0$ denotes the value for the unstretched, planar flame. The two definitions differ by an $O(1)$ factor and are consistent on dimensional grounds, $[\text{length}]^2\sim[\text{diffusivity}]/[\text{reaction rate}]$~\cite{transcript_l9}.
+
+\section{Three definitions of flame speed}
+
+Because a flame is a surface moving through a moving fluid, ``flame speed'' admits three distinct definitions, and conflating them is a common source of error~\cite{transcript_l9,lecture9}:
+\begin{description}[leftmargin=1.5em,itemsep=2pt]
+\item[Absolute speed] the velocity of the flame front as seen by a stationary (laboratory) observer.
+\item[Displacement speed $s_d$] the velocity of the front \emph{relative to the unburnt reactants}; this is the quantity most used in premixed combustion. A flame can be stationary in the lab (zero absolute speed) yet have a non-zero displacement speed equal to the incoming reactant velocity.
+\item[Consumption speed] defined through an integral of the fuel consumption rate across the flame, normalised by density and the fuel mass; it is the most robust definition for computations because it measures how much fuel is actually burned per unit area and time.
+\end{description}
+The flame normal is defined as $\vv n=-\grad c/|\grad c|$, the minus sign making it point from products toward reactants (since $c$ increases from reactants to products)~\cite{lecture9,transcript_l9}. Tracking an iso-surface of $c$ gives the kinematic (G-equation) identity in which the front's motion is a balance of convection and propagation; rearranging it expresses the displacement speed in terms of reaction and diffusion, and shows that the flame speed depends on the \emph{reaction rate} (a function of local $T$, $p$ and composition) and on \emph{diffusion}, but not directly on convection --- though convection couples in through these terms~\cite{lecture9,transcript_l9}. Because the displacement speed depends on the species diffusivities, differential diffusion is especially important for hydrogen, a point taken up in Chapters~\ref{ch:stretch} and~\ref{ch:hydrogen}~\cite{lecture9}.
+
+\section{Estimating the laminar burning velocity: thermal flame theory}
+
+The diffusion--reaction balance gives the canonical scaling of the unstretched laminar burning velocity and thickness~\cite{lecture9,glassman2014combustion}:
+\begin{equation}
+\sLz\sim\sqrt{\frac{\alpha}{\tau_{chem}}}\sim\sqrt{\alpha\,\bar{\dot\omega}},\qquad
+\dL\sim\frac{\alpha}{\sLz}\sim\sqrt{\alpha\,\tau_{chem}} ,
+\label{eq:sL-scaling}
+\end{equation}
+where $\tau_{chem}$ is the chemical time and $\bar{\dot\omega}$ a mean reaction rate. The physical content is that the flame propagates as fast as heat (and radicals) can diffuse ahead and ignite the next layer: a higher diffusivity or a faster chemistry both increase $\sLz$, while the product $\alpha\tau_{chem}$ sets the thickness. The classical Zeldovich--Frank-Kamenetskii thermal-flame analysis makes this precise and predicts the strong sensitivity of $\sLz$ to the flame temperature through the Arrhenius factor, hence to everything that changes $\Tad$~\cite{glassman2014combustion,warnatz2006combustion}. The chemical time embedded here, compared with the turbulent time scales of Chapter~\ref{ch:turbulence}, is exactly what generates the Damk\"ohler and Karlovitz numbers and the regime diagrams.
+
+\section{How the laminar burning velocity depends on the mixture}
+
+The laminar burning velocity is an intrinsic property of a fuel/air mixture and the master parameter of premixed combustion: it sets flame stabilisation, governs flashback and blow-off, and constrains combustor sizing~\cite{lecture5}. Its dependencies are~\cite{lecture5,lecture9,warnatz2006combustion}:
+\begin{itemize}[leftmargin=1.5em,itemsep=2pt]
+\item \textbf{Equivalence ratio:} $\sLz$ peaks at or just rich of stoichiometric, where $\Tad$ is highest, and falls toward the lean and rich flammability limits, mirroring the temperature behaviour of Chapter~\ref{ch:thermo}.
+\item \textbf{Unburnt temperature:} $\sLz$ rises with preheat, because higher $T_u$ raises $\Tad$ and accelerates the Arrhenius chemistry.
+\item \textbf{Pressure:} for most hydrocarbons $\sLz$ \emph{decreases} weakly with pressure (the reaction-order and diffusivity dependences combine to give $\sLz\propto p^{(n-2)/2}$ with $n\lesssim2$).
+\item \textbf{Fuel type:} most hydrocarbon/air flames have $\sLz$ of a few tenths of a metre per second --- about \SI{0.38}{m\,s^{-1}} for methane and \SI{0.56}{m\,s^{-1}} for kerosene at stoichiometric --- whereas hydrogen is dramatically faster at about \SI{2.9}{m\,s^{-1}}, roughly an order of magnitude higher~\cite{lecture5}.
+\end{itemize}
+The exceptional value for hydrogen --- a consequence of its high diffusivity and reactivity --- is the single most important fact behind the special behaviour of hydrogen flames, and it is why measured hydrogen burning velocities scatter so much between experimental setups and models (Chapter~\ref{ch:hydrogen})~\cite{lecture9,lecture5}. The \textbf{flammability limits} bound the range of $\phi$ over which a flame can propagate at all; outside them the heat release is too low to sustain the front against losses.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\linewidth]{fig_sL_phi}
+\caption{Laminar burning velocity versus equivalence ratio for various fuels, peaking near stoichiometric~\cite{lecture9}.}
+\label{fig:fig_sL_phi}
+\end{figure}
+
+\section{Deflagration and detonation: the Rankine--Hugoniot picture}
+
+The propagation modes introduced in Section~\ref{ch:intro} are made quantitative by the steady one-dimensional conservation laws across the wave~\cite{lecture4,glassman2014combustion}. Mass and momentum give
+\begin{equation}
+\rho_u U_u=\rho_b U_b,\qquad p_u+\rho_u U_u^2=p_b+\rho_b U_b^2,
+\end{equation}
+which combine into the \textbf{Rayleigh line} $p_b-p_u=-(\dot m/A)^2(1/\rho_b-1/\rho_u)$: a straight line in the $p$--$1/\rho$ plane whose (negative) slope is fixed by the mass flux. Adding energy conservation with the heat release $q$ gives the \textbf{Hugoniot curve}, the locus of possible burnt states. The intersection of the Rayleigh line with the Hugoniot curve selects the actual end state, and the geometry yields two physically distinct branches~\cite{lecture4,glassman2014combustion}. The \emph{deflagration} branch corresponds to a subsonic wave with a slight pressure decrease and a large volume increase --- the ordinary flame of this chapter, driven by diffusion of heat and radicals. The \emph{detonation} branch corresponds to a supersonic wave with a large pressure rise, in which a leading shock compresses and ignites the gas. The tangency points where the Rayleigh line just touches the Hugoniot are the \textbf{Chapman--Jouguet} states, at which the burnt gas moves sonically relative to the wave; they separate the weak and strong sub-branches and identify the self-sustaining detonation speed. Air-breathing propulsion operates entirely on the deflagration branch, which is why a deflagration may be treated as low-Mach-number and nearly isobaric~\cite{lecture4}.
+
+\section{Flame stabilisation, flashback and blow-off}
+
+A practical burner must hold the flame in place. On a Bunsen burner the conical flame results from a \textbf{kinematic balance}: the oncoming unburnt velocity $v_u$ is decomposed into components normal and tangential to the flame, and because thermal expansion increases only the normal component (the tangential component is unchanged, while $\rho v_{n,u}=\rho v_{n,b}$), a steady cone forms when the burning velocity equals the normal component of the approach flow~\cite{lecture5}:
+\begin{equation}
+\sLz=v_{n,u}=v_u\sin\alpha ,
+\label{eq:bunsen}
+\end{equation}
+with $\alpha$ the half-angle of the cone --- the basis of the cone-angle measurement of Chapter~\ref{ch:diagnostics}~\cite{lecture5}. This balance also explains the failure modes. If the bulk velocity is slightly above $\sLz$ the cone is stable; if it is far too large the flame cannot keep up and is blown away (\textbf{blow-off}); if it is too small the flame propagates upstream into the supply (\textbf{flashback})~\cite{lecture5}.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.55\linewidth]{fig_bunsen}
+\caption{Kinematic balance on a Bunsen flame: the burning velocity equals the normal component of the approach flow, $\sLz=v_u\sin\alpha$~\cite{lecture5}.}
+\label{fig:fig_bunsen}
+\end{figure}
+
+\textbf{Quenching} sets a lower bound on the size of a passage that will sustain a flame: the \emph{quenching distance} is the gap between parallel plates (or the diameter of a tube) below which heat loss to the walls and flame stretch extinguish the front~\cite{lecture5}. It scales inversely with burning velocity and reactivity, so it is smallest for fast, hot flames: about \SI{2.5}{mm} for methane, \SI{1.4}{mm} for kerosene, and only \SI{0.64}{mm} for hydrogen~\cite{lecture5,kiymaz2023quenching}. The small quenching distance of hydrogen is a recurring design headache, since flames can survive in gaps that would safely quench a hydrocarbon flame~\cite{lecture5}.
+
+The most important flashback route for laboratory premixed flames is \textbf{boundary-layer flashback}~\cite{lecture5,kalantari2017flashback_3quench}. Near a wall the no-slip condition reduces the flow velocity, while the burning velocity falls only within the quenching distance of the wall; flashback occurs where the local burning velocity overtakes the local flow velocity. This is captured by the \textbf{critical velocity-gradient} model of Lewis and von Elbe: defining the wall velocity gradient $g_F=(\partial u/\partial y)_{y=0}=\tau_w/\mu$, and the penetration distance $\delta_b$ (the closest the flame approaches the wall, slightly larger than the quenching distance), the flashback condition is
+\begin{equation}
+g_F\le g_c=\frac{\sLz}{\delta_b},
+\label{eq:critical-gradient}
+\end{equation}
+i.e.\ flashback when the wall gradient drops below a critical value set by the burning velocity and the penetration distance~\cite{lecture5,lewis1943stability_3quench_original}. The larger burning velocity and smaller quenching distance of hydrogen both raise its critical gradient and make it far more flashback-prone than methane~\cite{lecture5}. The additional flashback mechanisms relevant to swirl-stabilised gas-turbine combustors --- core-flow flashback, combustion-induced vortex breakdown, thermoacoustically driven flow reversal, and auto-ignition flashback ($\tau_{ig}<\tau_{res}$) --- are taken up in Chapters~\ref{ch:diagnostics} and~\ref{ch:hydrogen}, where they are central~\cite{lecture5,lecture6}.
+
+\begin{keybox}
+\keyhead{Why the laminar burning velocity is the master parameter}
+$\sLz$ follows from the diffusion--reaction balance, $\sLz\sim\sqrt{\alpha/\tau_{chem}}$, peaks near stoichiometric, and is an order of magnitude larger for hydrogen than for hydrocarbons. Through the kinematic balance $\sLz=v_u\sin\alpha$ and the critical-gradient criterion $g_c=\sLz/\delta_b$, it dictates flame shape, stabilisation, flashback and blow-off~\cite{lecture5,lecture9}.
+\end{keybox}

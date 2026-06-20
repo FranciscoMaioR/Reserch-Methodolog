@@ -1,0 +1,77 @@
+\chapter{Combustion in Propulsion and Power, and Why It Is Hard}\label{ch:intro}
+
+\section{Why combustion still matters}
+
+Combustion is the controlled, exothermic oxidation of a fuel, and despite a century of work on alternatives it still supplies the overwhelming majority of the world's primary energy --- of the order of \SI{80}{\percent}--\SI{87}{\percent} depending on the year and the accounting~\cite{lecture1}. For aviation in particular there is at present no mature alternative that matches the energy density and power-to-weight of burning a hydrocarbon in air, which is why the course opens by arguing that understanding combustion is not a historical curiosity but a prerequisite for designing the propulsion and power systems of the next decades~\cite{lecture1,Langella_LectureNotes}.
+
+The scale of the activity is also the scale of its environmental cost. A single landing--take-off (LTO) cycle of a Boeing~747-400 burns about \SI{4}{\tonne} of kerosene and emits roughly \SI{12}{\tonne} of \ch{CO_2}, \SI{21}{kg} of \ch{CO} and \SI{98}{kg} of \ch{NO_x}; a modern Airbus A350-900 burns of order \SI{25}{\tonne} of fuel per mission~\cite{lecture1}. Aviation is responsible for roughly \SI{2}{\percent}--\SI{3}{\percent} of anthropogenic \ch{CO_2} and about \SI{12}{\percent} of transport-sector \ch{CO_2}; with traffic growing several percent per year and no drop-in substitute, its share could rise substantially by mid-century~\cite{lecture1}. This motivates the regulatory framework the course refers to repeatedly --- ICAO's CORSIA offsetting scheme and the ACARE targets for large relative cuts in \ch{CO_2} and \ch{NO_x} --- and explains why \emph{emissions} sit alongside \emph{efficiency} as a design driver throughout the later chapters~\cite{lecture1}.
+
+A central message of the introduction is that efficiency and emissions are not independent goals but two faces of the same energy balance. Modern combustors already reach combustion efficiencies above \SI{99}{\percent}; the last fraction of a percent matters less for the heat released than for what the unburnt remainder \emph{is} --- carbon monoxide, unburnt hydrocarbons, soot --- because incomplete combustion leaves behind precisely the intermediate and pollutant species that are toxic and regulated~\cite{lecture1}. Controlling efficiency is therefore a way of controlling emissions, with the occasional exception of processes where the product (e.g.\ carbon black, or soot for radiative heat transfer in a furnace) is actually wanted~\cite{lecture1}.
+
+\section{What makes a reacting flow different}
+
+The defining difficulty of combustion is that a reacting gas is a \emph{non-isothermal, multi-component} mixture in which the thermodynamics, the transport and the chemistry are all coupled, and all of them depend on the local temperature and composition~\cite{lecture1,Langella_LectureNotes}. In a non-reacting aerodynamics problem one typically carries the density, three velocity components, pressure and temperature. A combustion problem adds a mass fraction $Y_k$ for every chemical species, and a realistic hydrocarbon mechanism easily involves $N>50$ species, each governed by its own transport equation with a chemical source term~\cite{lecture1}. The composition is described by the mass fraction, mole fraction and molar concentration,
+\begin{equation}
+Y_k=\frac{m_k}{m},\qquad X_k=\frac{n_k}{n}=\frac{W}{W_k}\,Y_k,\qquad [X_k]=\frac{\rho Y_k}{W_k},
+\qquad \frac{1}{W}=\sum_{k=1}^{N}\frac{Y_k}{W_k},
+\label{eq:composition}
+\end{equation}
+where $W_k$ is the molar mass of species $k$ and $W$ the mean molar mass of the mixture~\cite{lecture1,warnatz2006combustion}. The coupling is what makes the problem hard: the reaction rates depend exponentially on temperature and on the species concentrations; the heat released by reaction changes the temperature; the temperature changes the density, the transport coefficients (viscosity, conductivity, diffusivities) and the heat capacities; and those changes feed back into the flow and the reaction rates~\cite{lecture1,Langella_LectureNotes}. Even the single-species heat capacity is not constant: it rises with temperature as rotational and then vibrational molecular modes are progressively excited, an effect developed quantitatively in Chapter~\ref{ch:thermo}~\cite{lecture1,warnatz2006combustion}.
+
+Combustion is moreover \emph{multi-scale and multi-physics}. In a turbulent flame the largest energy-containing eddies may be metres across and evolve over seconds, while the reaction zone is a sheet of order \SI{100}{\micro m} thick (with the radical-rich layer only \SIrange{5}{10}{\micro m}) and chemical times fall in the range \SIrange{1}{100}{\micro s}; the ratio of largest to smallest scales is of order $10^{6}$ in both space and time, and grows further at the high pressures of an engine~\cite{lecture4}. Capturing a \SI{10}{\micro m} reaction layer and a several-metre device in one calculation is impossible by brute force, and the whole subject of combustion modelling (Chapter~\ref{ch:turbcomb}) is the art of keeping the essential physics while extracting affordable, relevant results~\cite{lecture4}.
+
+\begin{keybox}
+\keyhead{The combustion problem in one sentence}
+Track $\rho,\ \vv{u},\ p,\ T,\ h$ and $N$ species mass fractions $Y_k$ simultaneously, knowing that reaction rates, transport coefficients and heat capacities all depend on the very temperature and composition the reactions are changing --- across a range of length and time scales spanning six orders of magnitude~\cite{lecture1,lecture4}.
+\end{keybox}
+
+\section{Combustor architecture and requirements}
+
+In an aero-engine the combustor sits between the compressor and the turbine and must add heat at roughly constant pressure (the Brayton-cycle heat-addition leg). Air enters the combustor at the compressor-exit conditions --- high pressure and temperature but at a Mach number far too high to sustain a flame --- so the first job of the hardware is a diffuser that decelerates the flow, after which fuel is injected, mixed and burned, and the hot products are diluted and shaped before entering the turbine~\cite{lecture4}. The design is described in the lecture as ``an art requiring a great deal of experience'' precisely because so many physical processes --- gas dynamics, sprays, chemistry, turbulence, thermoacoustics, heat transfer and fluid--structure interaction --- act at once~\cite{lecture4}.
+
+The requirements a combustor must satisfy simultaneously are worth stating explicitly, because they recur as the rationale for the design choices in Chapter~\ref{ch:combustors}~\cite{lecture4}: high combustion efficiency (maximise heat release and minimise unburnt species); flame stability over the whole operating envelope; reliable ignition on the ground in the cold and relight at altitude; low total-pressure loss (a rule of thumb is that \SI{1}{\percent} pressure loss costs about \SI{0.33}{\percent} in specific fuel consumption); an exit temperature profile that matches the turbine entry temperature with no hot spots that would damage the blades; low emissions (\ch{CO} and unburnt hydrocarbons are worst at low/idle power, \ch{NO_x} worst at high power); and low cost. Several of these pull against each other --- for example, the lean, well-mixed conditions that suppress \ch{NO_x} tend to worsen stability and ignition --- which is the source of much of the engineering tension in the subject~\cite{lecture4,lecture13}.
+
+\section{A taxonomy of combustion}
+
+Because ``combustion'' covers everything from a candle to a detonation, the course organises the phenomena along several independent axes~\cite{lecture4,warnatz2006combustion}. The single most important distinction is the \textbf{state of mixing} of fuel and oxidiser. In \emph{premixed} combustion the reactants are mixed at the molecular level before ignition, and the flame is a thin front that propagates into the fresh mixture at a well-defined burning velocity set by the balance of diffusion and reaction; the unburnt mixture is itself flammable, which raises the safety issue of flashback. In \emph{non-premixed} (diffusion) combustion the fuel and oxidiser arrive as separate streams, the flame sits where they mix to stoichiometric proportions, and there is no intrinsic propagation speed --- the burning rate is controlled by mixing. \emph{Partially premixed} combustion lies in between and arises whenever mixing is imperfect: limited mixer length, distributed spray injection, or an ignition delay that lets the streams mix before they react~\cite{lecture4}. These three regimes are treated in Chapters~\ref{ch:premixed}, \ref{ch:nonpremixed} and \ref{ch:turbcomb}.
+
+The remaining axes are summarised in Table~\ref{tab:classification}. The \textbf{nature of the flow} is laminar or turbulent; the \textbf{phase of the reactants} homogeneous (single phase) or heterogeneous (sprays, particles, soot); the \textbf{mode} is steady or unsteady; the \textbf{flow speed} compressible or incompressible; and one further distinguishes adiabatic from non-adiabatic systems (a burner-stabilised flame loses heat to the burner), natural from forced convection (a buoyant candle versus a momentum-driven jet), the spatial dimensionality (0-D homogeneous reactor up to fully 3-D), and the treatment of the chemistry (chemical equilibrium, i.e.\ infinitely fast, versus finite-rate)~\cite{lecture4}. A real aero-engine combustor occupies the demanding corner of nearly all of these: a turbulent, heterogeneous (spray), partially premixed, essentially isobaric, finite-rate deflagration~\cite{lecture4}.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.78\linewidth]{fig_flame_classification}
+\caption{Classification of combustion processes along the independent axes of mixing, flow, phase, mode, temporal variation and flow speed~\cite{lecture4}.}
+\label{fig:fig_flame_classification}
+\end{figure}
+
+\begin{table}[h]
+\centering
+\caption{Classification of combustion processes along independent axes~\cite{lecture4,warnatz2006combustion}.}
+\label{tab:classification}
+\begin{tabular}{@{}ll@{}}
+\toprule
+\textbf{Criterion} & \textbf{Categories} \\
+\midrule
+Mixing of fuel and oxidiser & premixed / non-premixed (diffusion) / partially premixed \\
+Nature of the flow & laminar / turbulent \\
+Phase of the reactants & homogeneous / heterogeneous \\
+Mode of combustion & propagation (deflagration, detonation) / explosion \\
+Temporal variation & steady / unsteady \\
+Flow speed & incompressible / compressible \\
+Heat transfer & adiabatic / non-adiabatic \\
+Convection & natural / forced \\
+Spatial dependence & 0-D / 1-, 2-, 3-D \\
+Chemistry & equilibrium (infinitely fast) / finite-rate \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The \textbf{mode of combustion} deserves a first comment here because it reappears throughout. A zero-dimensional homogeneous system, in which mixing is much faster than chemistry, simply reacts everywhere at once: this is an explosion or auto-ignition. When transport matters, a localised reaction front instead \emph{propagates} through the mixture, and there are two physically distinct propagating modes. A \emph{deflagration} is a subsonic, nearly isobaric wave driven by the diffusion of heat and radicals into the fresh gas; a \emph{detonation} is a supersonic wave in which a leading shock compresses and ignites the mixture, with a large pressure rise across the front. The two appear as the two branches of the Hugoniot curve obtained from the steady one-dimensional conservation of mass and momentum, $\dot m/A=\rho U=\text{const}$ and $p+\rho U^2=\text{const}$, which together force the state to move along a straight Rayleigh line $p_X-p_A=-(\dot m/A)^2(1/\rho_X-1/\rho_A)$ connecting the unburnt and burnt states~\cite{lecture4,glassman2014combustion}. Deflagrations (the regime of essentially all air-breathing propulsion) can be treated as low-Mach-number, incompressible; detonations are inherently compressible. The full Rankine--Hugoniot analysis is developed in Chapter~\ref{ch:premixed}.
+
+\section{A little history}
+
+The lecture frames the science with a short history that is worth keeping in mind because it shows how slowly the basic facts were established~\cite{lecture4}. Combustion is as old as humanity, but its first ``explanation'' --- the phlogiston theory of the seventeenth century --- held that burning released a substance, phlogiston, and had to contort itself into proposing negative weight to account for the fact that some metals gain mass when they burn. The modern picture began with experiments: Bacon and Fludd observed flame structure and the role of the surrounding air around 1620; Hooke recognised air as an active participant in 1665; and in 1772 Lavoisier showed that burning phosphorus gains weight by combining with a gas in the air (oxygen), in the process establishing the principle of conservation of mass, later reinforced by Dalton and the discovery of the chemical species~\cite{lecture4}. Davy measured flame temperatures and introduced the idea of flame propagation in the 1810s; Thompson (Count Rumford) advanced the kinetic theory of heat; detonation was discovered in 1881; and the Bunsen burner, introduced in the 1850s, gave combustion science its first well-controlled laboratory premixed flame --- still the workhorse for measuring laminar flame speed in Chapter~\ref{ch:diagnostics}~\cite{lecture4}.
+
+\section{Three levels of analysis: the roadmap of this guide}
+
+The course --- and therefore this guide --- treats combustion at three successively more detailed levels, relaxing one idealisation at each step~\cite{lecture1,lecture4}. The coarsest is a pure \textbf{enthalpy and heat balance}: assume the products are known and ask only how much heat is released and what final temperature results. The next level is \textbf{chemical equilibrium}, which assumes the chemistry is infinitely fast so that the product composition is whatever minimises the free energy at the final state; this predicts dissociation and its dependence on pressure and temperature, but still says nothing about \emph{rates}. The finest level is \textbf{finite-rate chemistry and chemical kinetics}, which is required whenever a chemical time scale is comparable to a flow or residence time --- as it is for ignition, for flame propagation, and for the slow-forming minor species \ch{CO} and \ch{NO_x} that dominate the emissions problem~\cite{lecture1,transcript_tutorial}. These three levels structure the next two chapters: Chapter~\ref{ch:thermo} develops the thermodynamic and equilibrium description, and Chapter~\ref{ch:kinetics} introduces finite-rate kinetics. The transport that turns a homogeneous reactor into a spatially structured flame is added in Chapter~\ref{ch:governing}.
