@@ -4,7 +4,29 @@
 \chapter{Lecture Slides}
 \label{ch:slides}
 
-\includepdf[pages=-, nup=2x2, landscape=true, frame=true, delta=3mm 3mm,
-  pagecommand={\thispagestyle{empty}}]{annex_slides.pdf}
+% Each lecture unit is included separately so that every unit begins on a
+% fresh 4-up landscape page and decks do not blend across a sheet.
+\newcommand{\slidedeck}[1]{%
+  \includepdf[pages={#1}, nup=2x2, landscape=true, frame=true, delta=3mm 3mm,
+    pagecommand={\thispagestyle{empty}}]{annex_slides.pdf}}
+
+\slidedeck{1-9}      % Unit 1 Part 1
+\slidedeck{10-16}    % Unit 1 Part 2
+\slidedeck{17-21}    % Unit 1 Part 3
+\slidedeck{22-27}    % Unit 1 Part 4
+\slidedeck{28-32}    % Unit 2 Part 1
+\slidedeck{33-49}    % Unit 2 Part 2
+\slidedeck{50-59}    % Unit 2 Part 3
+\slidedeck{60-64}    % Unit 2 Part 4
+\slidedeck{65-69}    % Unit 3 Part 1
+\slidedeck{70-79}    % Unit 3 Part 2
+\slidedeck{80-86}    % Unit 3 Part 3
+\slidedeck{87-92}    % Unit 4 Part 1
+\slidedeck{93-100}   % Unit 4 Part 2
+\slidedeck{101-111}  % Unit 5 Part 1
+\slidedeck{112-118}  % Unit 5 Part 2
+\slidedeck{119-127}  % Unit 6 Part 1
+\slidedeck{128-135}  % Unit 6 Part 2
+\slidedeck{136-142}  % Unit 6 Part 3
 
 \end{document}
