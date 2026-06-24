@@ -1,0 +1,126 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+
+\chapter*{Exam Guide --- Worked Example}
+\addcontentsline{toc}{chapter}{Exam Guide --- Worked Example}
+\markboth{Exam Guide --- Worked Example}{Exam Guide --- Worked Example}
+\label{ch:exam}
+
+% ---------------------------------------------------------------
+\section*{Q1 — Referencing (\autoref{sec:referencing})}
+
+\begin{description}
+  \item[Author-date (APA)]
+    Author format: \texttt{Last, Initial.} (e.g.\ \texttt{Uriol Balbin, I., Bisagni, C., \ldots}).
+    Year in parentheses after authors: \texttt{(2020).}
+    List ordered \textbf{alphabetically}.
+    In-text: \texttt{(Author, Year)} or \texttt{Author (Year)}.
+
+  \item[Numbered (AIAA)]
+    Bracketed number before entry: \texttt{[1]}.
+    Author format: \texttt{Last, Initial.}
+    Entry: \texttt{[1] Last, I. "Title," Journal, Vol. X, No. Y, Year, pp. X–Y.}
+    List ordered by \textbf{order of appearance} in text.
+    In-text: \texttt{[1]}.
+\end{description}
+
+Both styles require \texttt{Last, Initial} format. \texttt{Initial Last} and \texttt{First Last} are errors. Mixing formats within a list is an error.
+
+% ---------------------------------------------------------------
+\section*{Q2 — Research Question (\autoref{sec:objectives-rqs})}
+
+\textbf{Criteria — RRAP}
+\begin{itemize}
+  \item \textbf{Relevant} — contributes to the objective
+  \item \textbf{Researchable} — answerable through methods
+  \item \textbf{Anchored} — tied to a specific system/context
+  \item \textbf{Precise} — no vague language, no hedges (\emph{might, aspects of, could})
+\end{itemize}
+
+\textbf{Spotting the error (Q2a type)}
+\begin{itemize}
+  \item Vague words $\to$ Imprecise
+  \item No system/context $\to$ Not anchored
+  \item Yes/no formulation $\to$ Too closed
+  \item Grammatical error and ``too short'' are almost never the answer
+\end{itemize}
+
+\textbf{Template:} ``What [specific attribute/relationship] of [specific concept] [affects/determines] [specific outcome] in [specific system/context]?''
+
+\textbf{Examples}
+\begin{itemize}
+  \item[$\times$] ``What aspects related to thermal control might be considered important?''
+  \item[$\checkmark$] ``What thermal control parameters most significantly affect structural integrity during spacecraft reentry?''
+  \item[$\checkmark$] ``How does inlet pressure influence combustion efficiency in a scramjet operating at Mach 6?''
+  \item[$\checkmark$] ``Which aerodynamic surface deflection angles minimize drag during the transition phase of a tilt-rotor tail-sitter MAV?''
+\end{itemize}
+
+Must be open-ended (\emph{What / How / Which / To what extent}), not yes/no.
+
+% ---------------------------------------------------------------
+\section*{Q3a — Research Objective (\autoref{sec:objectives-rqs})}
+
+\textbf{Prescribed structure:} ``The research objective is \textbf{[contribution]} by \textbf{[method/approach]}.''
+
+\textbf{Criteria — IUFC}
+\begin{itemize}
+  \item \textbf{Informative} — generic engineer can understand the project
+  \item \textbf{Useful} — states what benefit the research provides
+  \item \textbf{Feasible} — achievable within scope and resources
+  \item \textbf{Clear} — precise about what the contribution is
+\end{itemize}
+
+Common error: writing a question (``How can X be improved\ldots'') instead of a declarative statement.
+
+% ---------------------------------------------------------------
+\section*{Q3b — Variables (\autoref{sec:language-research}, \autoref{sec:operationalization})}
+
+A variable is any quantity that can change and is measured/controlled in the research. \textbf{Only select variables explicitly mentioned in the scenario text.} Do not import variables from background knowledge.
+
+% ---------------------------------------------------------------
+\section*{Q4 — Data Management (\autoref{sec:dmp})}
+
+\textbf{3-2-1 rule:} 3 copies, on 2 different storage media, with 1 copy in a different physical location. If a data type has only one storage location $\to$ backup is missing; flag it.
+
+\textbf{DMP principles:} Use open/non-proprietary formats. Keep an uncorrected original. Document your workflow. Use descriptive file names. Design the backup strategy from the start, not at the end.
+
+% ---------------------------------------------------------------
+\section*{Q5 — Research Design (\autoref{sec:language-research}, \autoref{sec:strategy-materials})}
+
+\begin{description}
+  \item[Hypothesis] Affirmative prediction that the proposed solution works. Mirrors the RO/RQ positively. Not the problem statement, not a comparison with prior methods.
+  \item[Expertise] What you need to know. Only select domains directly required by the tasks listed.
+  \item[Methods] What you do (analytical frameworks, simulation, testing, NDI/INDI controller). Knowledge areas are not methods.
+  \item[Materials] Physical/software resources you procure (aircraft, computer, software, test facility). Methods and expertise are not materials.
+\end{description}
+
+% ---------------------------------------------------------------
+\section*{Q6 — Sampling (\autoref{sec:sample-types})}
+
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+  \toprule
+  \textbf{Type} & \textbf{Definition} & \textbf{Main limitation} \\
+  \midrule
+  Simple random & Equal probability for every element & Underrepresents rare sub-groups \\
+  Convenience   & What is available                   & May not represent long-term or broader trends \\
+  Purposive     & Target the information-rich sub-group & No comparison with the non-targeted group (no baseline) \\
+  \bottomrule
+\end{tabular}
+\end{center}
+
+Neither convenience nor purposive sampling can be assumed to represent the full population — must be stated explicitly.
+
+% ---------------------------------------------------------------
+\section*{Q7 — 4Cs Writing (\autoref{sec:writing-style})}
+
+\begin{description}
+  \item[Clear] Understood by intended audience; terms defined.
+  \item[Comprehensive] All necessary information present.
+  \item[Concise] No repetition, no padding.
+  \item[Correct] Factually accurate, grammatically sound.
+\end{description}
+
+Check distractors against the actual text before selecting. If an option says ``X is not defined,'' verify it is actually undefined in the passage.
+
+\end{document}
