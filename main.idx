@@ -1,82 +1,73 @@
-\indexentry{the problem}{16}
-\indexentry{the sample}{16}
-\indexentry{research design}{16}
-\indexentry{measure}{16}
-\indexentry{analyse}{16}
-\indexentry{conclude}{16}
-\indexentry{hypothesis}{17}
-\indexentry{descriptive study}{17}
-\indexentry{relational study}{17}
-\indexentry{causal study}{17}
-\indexentry{variable}{17}
-\indexentry{attributes}{17}
-\indexentry{Correlation is not causation}{17}
-\indexentry{hourglass model}{18}
-\indexentry{Deductive reasoning}{18}
-\indexentry{Inductive reasoning}{18}
-\indexentry{Feasibility}{19}
-\indexentry{literature review}{19}
-\indexentry{conceptual research design}{20}
-\indexentry{technical research design}{20}
-\indexentry{Theory-oriented objectives}{21}
-\indexentry{Practice-oriented objectives}{21}
-\indexentry{research objective}{21}
-\indexentry{Criteria for a good research objective}{21}
-\indexentry{Research questions}{21}
-\indexentry{Research framework}{21}
-\indexentry{Operationalisation}{21}
-\indexentry{Research strategy}{22}
-\indexentry{Research materials}{22}
-\indexentry{Research planning}{22}
-\indexentry{Human Research Ethics Committee (HREC)}{23}
-\indexentry{population}{25}
-\indexentry{sample}{25}
-\indexentry{sampling method}{25}
-\indexentry{theoretical population}{25}
-\indexentry{study population}{25}
-\indexentry{sampling frame}{25}
-\indexentry{sample}{25}
-\indexentry{Probability sampling}{26}
-\indexentry{Simple random sampling}{26}
-\indexentry{Complex probability sampling}{26}
-\indexentry{Non-probability sampling}{26}
-\indexentry{Convenience sampling}{26}
-\indexentry{Purposive sampling}{26}
-\indexentry{standard error}{26}
-\indexentry{standard deviation}{26}
-\indexentry{Personal data}{27}
-\indexentry{Protected data}{27}
-\indexentry{Qualitative data}{27}
-\indexentry{Quantitative data}{27}
-\indexentry{Data quality}{27}
-\indexentry{research logbook}{27}
-\indexentry{Verification}{29}
-\indexentry{Validation}{29}
-\indexentry{Engineering for One Planet (EOP)}{30}
-\indexentry{Value of research}{30}
-\indexentry{Reproducibility of research}{30}
-\indexentry{Resource management}{30}
-\indexentry{data management plan (DMP)}{32}
-\indexentry{Data Description}{32}
-\indexentry{Documentation and Data Quality}{32}
-\indexentry{Storage and Backup}{32}
-\indexentry{3-2-1 rule}{32}
-\indexentry{Legal and Ethical Requirements}{32}
-\indexentry{Data Sharing and Long-term Preservation}{32}
-\indexentry{Data Management Responsibilities}{32}
-\indexentry{Estimating tasks}{33}
-\indexentry{Work Breakdown Structure (WBS)}{33}
-\indexentry{Resource management}{33}
-\indexentry{Project planning}{33}
-\indexentry{Gantt chart}{33}
-\indexentry{critical path}{33}
-\indexentry{FAIR principles}{34}
-\indexentry{Research Methodologies report}{35}
-\indexentry{report structure}{35}
-\indexentry{Research Methodologies report structure}{35}
-\indexentry{author-date style (APA)}{36}
-\indexentry{numbered style (AIAA)}{36}
-\indexentry{reference checklist}{36}
-\indexentry{4Cs style principles}{37}
-\indexentry{AI tools for scientific writing}{37}
-\indexentry{final writing checklist}{37}
+\indexentry{problem}{15}
+\indexentry{sample}{15}
+\indexentry{research design}{15}
+\indexentry{measure}{15}
+\indexentry{analyse}{15}
+\indexentry{conclude}{15}
+\indexentry{Hypothesis}{15}
+\indexentry{Descriptive study}{15}
+\indexentry{Relational study}{15}
+\indexentry{Causal study}{15}
+\indexentry{Variable}{15}
+\indexentry{attributes}{15}
+\indexentry{Correlation is not causation}{15}
+\indexentry{Hourglass model}{15}
+\indexentry{Deductive reasoning}{15}
+\indexentry{Inductive reasoning}{16}
+\indexentry{Feasibility}{16}
+\indexentry{Literature review}{16}
+\indexentry{Conceptual design}{17}
+\indexentry{Technical design}{17}
+\indexentry{Theory-oriented objectives}{17}
+\indexentry{Practice-oriented objectives}{17}
+\indexentry{Research objective}{17}
+\indexentry{Criteria}{17}
+\indexentry{Research questions}{17}
+\indexentry{Research framework}{17}
+\indexentry{Operationalisation}{17}
+\indexentry{Research strategy}{17}
+\indexentry{Research materials}{17}
+\indexentry{Research planning}{18}
+\indexentry{HREC}{18}
+\indexentry{Population}{19}
+\indexentry{Sample}{19}
+\indexentry{theoretical population}{19}
+\indexentry{study population}{19}
+\indexentry{sampling frame}{19}
+\indexentry{sample}{19}
+\indexentry{Probability sampling}{19}
+\indexentry{Simple random}{19}
+\indexentry{Complex probability}{19}
+\indexentry{Non-probability sampling}{19}
+\indexentry{Convenience}{19}
+\indexentry{Purposive}{19}
+\indexentry{Standard error}{19}
+\indexentry{standard deviation}{19}
+\indexentry{Personal data}{19}
+\indexentry{Protected data}{20}
+\indexentry{Qualitative data}{20}
+\indexentry{Quantitative data}{20}
+\indexentry{Data quality}{20}
+\indexentry{Research logbook}{20}
+\indexentry{Verification}{21}
+\indexentry{Validation}{21}
+\indexentry{EOP framework}{21}
+\indexentry{Value of research}{21}
+\indexentry{Reproducibility}{21}
+\indexentry{Resource management}{21}
+\indexentry{DMP}{23}
+\indexentry{3-2-1 rule}{23}
+\indexentry{Task estimation}{23}
+\indexentry{Work Breakdown Structure (WBS)}{23}
+\indexentry{Resource management}{23}
+\indexentry{Project planning}{23}
+\indexentry{Gantt chart}{24}
+\indexentry{critical path}{24}
+\indexentry{FAIR}{24}
+\indexentry{technical report}{25}
+\indexentry{Research Methodologies report}{25}
+\indexentry{Report structure}{25}
+\indexentry{Author-date (APA)}{25}
+\indexentry{Numbered (AIAA)}{25}
+\indexentry{4Cs}{26}
+\indexentry{AI writing tools}{26}
