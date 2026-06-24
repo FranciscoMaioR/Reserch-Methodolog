@@ -1,5 +1,8 @@
 \documentclass[../main.tex]{subfiles}
 \begin{document}
+\setlist[itemize]{topsep=2pt,itemsep=1pt,parsep=0pt,partopsep=0pt}
+\setlist[itemize,2]{topsep=1pt,itemsep=0pt,parsep=0pt,partopsep=0pt}
+\setlength{\parskip}{3pt}
 
 \chapter{Week 6 — Reporting and Writing}
 \label{ch:week6}
@@ -9,64 +12,38 @@
 \section{Part 1 — Technical Reports}
 \label{sec:reports}
 
-\subsection{Content}
 \begin{itemize}
-  \item Communicating the work is part of the job rather than an addition to it, and the goal is to let a reader understand a subject or carry out a task.
-  \item Industry reports include project results, handover documentation, instruction manuals, and software guides.
-  \item Academic reports include assignments, the master or doctoral thesis, conference articles, and journal articles.
-  \item A technical report conveys specific information about a technical subject to a specific audience for a specific and practical purpose.
-  \item The \keyterm{Research Methodologies report} conveys your research plan about your topic to a technical person familiar with your field, in order to organise your research activities.
-  \item A \keyterm{report structure} has a head, the introduction that orients the reader and stays proportional to the body, a main body of connected sections, and feet, the conclusions on which the report stands and which add no new information.
-  \item The \keyterm{Research Methodologies report structure} is an introduction on why the topic matters, a body of research questions, methods with tools and expected results, and planning, and conclusions that summarise the whole plan.
-  \item Write little and often, favouring snack writing over binge writing, and alternate thinking and writing rather than separating them.
+  \item Communicating the work is part of the job, not an addition to it.
+  \item A \keyterm{technical report} conveys specific information about a technical subject to a specific audience for a specific and practical purpose.
+  \item \keyterm{Research Methodologies report}: conveys your research plan to a knowledgeable peer in order to organise research activities.
+  \item \keyterm{Report structure} — head (introduction, proportional to the body), body (connected sections), feet (conclusions that add no new information).
+  \item RM report body: research questions (\autoref{sec:objectives-rqs}), methods with tools and expected results, planning (\autoref{sec:project-mgmt}).
+  \item Write little and often (snack writing); alternate thinking and writing rather than separating them.
 \end{itemize}
-
-\subsection{Explanation}
-The part opens by reframing reporting as part of the engineering work itself, not a chore appended to it, because a result that is not communicated cannot be used. The definition of a technical report is built entirely from specifics, a specific subject, audience, and purpose, which is what separates it from general writing and what makes the audience the first thing to fix. The Research Methodologies report is then a special case of that definition, with the plan as the subject, a knowledgeable peer as the audience, and the organising of research activities as the purpose. Naming the purpose this way matters, because it explains why the report is structured around a plan rather than around results that do not yet exist.
-
-The skeleton metaphor gives the structure its logic, since the introduction is proportioned to support the body, the body carries the argument in connected sections, and the conclusions are load-bearing feet that introduce nothing new. Mapping this onto the Research Methodologies report shows how directly it draws on the course, with the body's research questions coming from Week~2 (\autoref{sec:objectives-rqs}) and its planning coming from Week~5 (\autoref{sec:project-mgmt}). The writing-habit advice is practical rather than stylistic, since alternating thinking and writing treats writing as a way to clarify thought rather than a transcription of finished ideas. This is why the course recommends frequent short sessions, because a report assembled in one late burst tends to expose exactly the gaps that steady writing would have surfaced early.
 
 \section{Part 2 — Referencing}
 \label{sec:referencing}
 
-\subsection{Content}
 \begin{itemize}
-  \item Use at least three different document types, including at least one book for theoretical background.
-  \item Use at most two websites, or no more than 10\% of the list, and include patents, standards, and technical documents where relevant.
-  \item Most sources should be peer-reviewed journal articles, and most should be less than ten years old.
+  \item Use at least three document types including at least one book; at most two websites (or 10\% of the list).
+  \item Most sources: peer-reviewed journal articles, mostly under ten years old (\autoref{sec:research-ideas}).
   \item Choose one reference style and keep to it throughout.
-  \item The \keyterm{author-date style (APA)} cites parenthetically as (Author et al., 2020) or narratively as Author (2020), with the list ordered alphabetically by author.
-  \item Its advantage is that a reader recognises important original texts from the in-text reference, and its disadvantage is that longer in-text references reduce readability.
-  \item The \keyterm{numbered style (AIAA)} cites as a bracketed number such as [1], with the list ordered numerically by order of appearance.
-  \item Its advantage is easy movement from one reference to the next, and its disadvantage is that the in-text number carries no information itself.
-  \item The \keyterm{reference checklist} requires every borrowed illustration and statement to be referenced, with quotations in quotation marks and paraphrases in your own words.
-  \item The list must contain all references used in the text and only those references used in the text.
+  \item \keyterm{Author-date (APA)}: in-text as \texttt{(Author et al., 2020)} or \texttt{Author (2020)}; list ordered alphabetically. Advantage: in-text identifies the source. Disadvantage: interrupts prose.
+  \item \keyterm{Numbered (AIAA)}: in-text as \texttt{[1]}; list ordered by appearance. Advantage: clean text. Disadvantage: in-text marker carries no information.
+  \item Reference checklist: every borrowed illustration and statement is cited; quotations in quotation marks; paraphrases in own words; list and text agree exactly in both directions.
 \end{itemize}
-
-\subsection{Explanation}
-The sourcing rules are quality controls on the evidence base of the report, and each one targets a specific weakness. Requiring several document types and at least one book pushes against a literature base built entirely from convenient web pages, while capping websites and favouring peer-reviewed articles raises the average reliability of the sources. The currency rule, that most sources be under ten years old, guards against a report resting on superseded work, which connects back to the literature-review habits of Week~1 (\autoref{sec:research-ideas}). These are not arbitrary quotas but proxies for a literature base that a knowledgeable reader would trust.
-
-The two citation styles are presented as a genuine trade-off rather than a matter of taste, and understanding the trade-off is what makes the choice defensible. Author-date places the source identity directly in the text, so a reader recognises a landmark paper without consulting the list, at the cost of interrupting the prose with names and dates. Numbered style keeps the text clean and lets a reader walk the references in order, at the cost of an in-text marker that says nothing on its own. The firm instruction to pick one and keep it reflects that the damage comes from inconsistency, not from either choice, and the reference checklist then operationalises the give-credit duty by demanding that the text and the list agree exactly in both directions.
 
 \section{Part 3 — Writing Style}
 \label{sec:writing-style}
 
-\subsection{Content}
 \begin{itemize}
-  \item The reader is the most important person, so first define the target reader, what they want, and what they need the information for.
-  \item Then guide them in, remembering that readers look first at titles, then at figures, then at conclusions, and only then at the rest.
-  \item Layout must look clean with well-placed high-resolution images, and block diagrams often convey more than detailed explanations.
-  \item The \keyterm{4Cs style principles} are presented as the course's named set of writing principles. % NOTE: not in source material -- the slide titles the 4Cs but the principles themselves were shown as a diagram and are not stated in the transcription.
-  \item Graph tips: use tick marks with major gridlines at the start, often the origin, and the end, and add a non-overlapping legend when there is more than one line.
-  \item Keep markers the same colour as their line, use straight or short-dashed lines rather than dotted or long-dashed, and keep units and fonts consistent.
-  \item \keyterm{AI tools for scientific writing} must be used responsibly, since text generation can become redundant, brainstorming only looks back in time, and generated content or references are prone to error.
-  \item The \keyterm{final writing checklist} covers spelling and grammar, one or two ideas per paragraph, consistent format and nomenclature, and acronyms defined on first use.
-  \item It also requires every figure to be readable in PDF and captioned, clear without the text, and a title and conclusions that stand on their own.
+  \item Define the target reader first — what they want and what they need the information for.
+  \item Readers scan: titles $\to$ figures $\to$ conclusions $\to$ body. Those elements must be self-contained.
+  \item Layout: clean, well-placed high-resolution images; block diagrams often convey more than detailed explanations.
+  \item \keyterm{4Cs}: Clear (terms defined, understood by audience), Comprehensive (all necessary information present), Concise (no repetition or padding), Correct (factually and grammatically sound).
+  \item Graph conventions: tick marks with major gridlines at start and end; non-overlapping legend for multiple lines; markers same colour as line; straight or short-dashed lines; consistent units and fonts.
+  \item \keyterm{AI writing tools}: use responsibly — generation can be redundant, brainstorming is backward-looking, generated references are error-prone.
+  \item Final checklist: spelling and grammar; one or two ideas per paragraph; consistent format and nomenclature; acronyms defined on first use; every figure readable in PDF, captioned, and clear without the text; title and conclusions stand alone.
 \end{itemize}
-
-\subsection{Explanation}
-The organising idea of the part is that the reader, not the writer, decides whether a report succeeds, which inverts the usual instinct to write for oneself. Defining the target reader first is what makes every later choice answerable, since the right level of detail and the right emphasis depend entirely on who is reading and why. The observation that readers scan titles, then figures, then conclusions before the body is the practical reason those elements must be self-contained, because they are read in isolation and often instead of the full text. This is also why figures and block diagrams are treated as primary carriers of meaning rather than decoration, and it extends the Week~3 concern with clear, well-labelled data presentation.
-
-The guidance on AI tools is notably cautious and worth reading as a set of limitations rather than an endorsement. Each named use has a specific failure mode, with generation tending to overwrite, brainstorming bounded by a backward-looking training horizon, and content or reference generation prone to outright error, so the tools assist but do not absolve the writer of responsibility. The graph conventions are concrete because small inconsistencies in ticks, legends, line styles, and units are exactly what make a figure hard to read at a glance. The final checklist then closes the course by acting as a single gate over the whole report, and its recurring theme, that titles, figures, and conclusions must be understandable on their own, is the same reader-centred principle applied one last time.
 
 \end{document}

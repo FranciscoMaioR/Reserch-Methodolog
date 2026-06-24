@@ -1,5 +1,8 @@
 \documentclass[../main.tex]{subfiles}
 \begin{document}
+\setlist[itemize]{topsep=2pt,itemsep=1pt,parsep=0pt,partopsep=0pt}
+\setlist[itemize,2]{topsep=1pt,itemsep=0pt,parsep=0pt,partopsep=0pt}
+\setlength{\parskip}{3pt}
 
 \chapter{Week 4 — Validation and Sustainability}
 \label{ch:week4}
@@ -9,60 +12,39 @@
 \section{Part 1 — Verification and Validation}
 \label{sec:vv}
 
-\subsection{Content}
 \begin{itemize}
-  \item \keyterm{Verification} is proving that the research method has been used correctly and is suitable for the research topic.
-  \item \keyterm{Validation} is proving that the outcomes are true and based on strong scientific evidence.
-  \item Both are necessary to add credibility, to allow results to be used professionally, and to allow academic reproducibility and transparency.
-  \item In industry, verification is a quality-control process checking compliance with regulations, specifications, or conditions set at the start of a phase.
-  \item Industrial verification can occur in development, scale-up, or production, and it is often an internal process.
-  \item In industry, validation is a quality-assurance process establishing high-assurance evidence that the system meets its intended requirements.
-  \item Industrial validation involves acceptance of fitness for purpose with end users and stakeholders, and it is often an external process.
-  \item In a thesis, ask how the methods will be verified, how the research goal can be validated and proven true, and how high the validation quality will be.
-  \item Design a validation exercise into the work and reserve time to perform it rather than only exploring and implementing.
+  \item \keyterm{Verification}: the method was applied correctly and is suitable for the topic — internal, process-facing check.
+  \item \keyterm{Validation}: the outcomes are true and supported by strong evidence — external, reality-facing check.
+  \item Both are required for credibility, professional usability, and academic reproducibility.
+  \item Industry: verification = quality control against specifications (internal); validation = quality assurance of fitness for purpose with users (external).
+  \item Thesis guidance: ask in advance how methods will be verified and how the goal can be proven true; design the validation exercise into the schedule rather than assuming there will be time for it.
 \end{itemize}
-
-\subsection{Explanation}
-Verification and validation answer two questions that are easy to confuse and dangerous to merge. Verification is about the method and asks whether it was applied correctly and whether it was the right method for the topic, which makes it an internal, process-facing check. Validation is about the outcome and asks whether the result is actually true and supported by strong evidence, which makes it an external, reality-facing check. The industrial framing sharpens the split, with verification as quality control against fixed specifications and validation as quality assurance of fitness for purpose with real users. A project can pass one and fail the other, and a verified method that produces a plausible but false result is exactly the failure validation exists to catch.
-
-The thesis guidance turns the distinction into a planning instruction rather than a definition to memorise. Asking in advance how methods will be verified and how the goal will be validated forces both checks into the schedule, and the explicit warning to reserve time for validation reflects how often it is squeezed out by exploration and implementation. This is why verification and validation belong with planning from Week~2, since a validation exercise that was never timetabled tends not to happen. Both are also the operational meaning of the credibility and reproducibility that the ethics of Week~2 and the sustainability of the next part demand, so they sit at the centre of what makes a result usable beyond the project that produced it.
 
 \section{Part 2 — Engineering for One Planet}
 \label{sec:eop}
 
-\subsection{Content}
 \begin{itemize}
-  \item The \keyterm{Engineering for One Planet (EOP)} framework asks that planning consider environmental, social, cultural, and economic implications.
-  \item It covers three aspects: the value of research, the reproducibility of research, and resource management.
-  \item \keyterm{Value of research} requires forecasting both near-term and long-term cost and value, not only immediate findings.
-  \item Its questions ask whether there is potential value to science or industry, whether the work can be built upon, and whether it carries direct or unintended potential for harm.
-  \item \keyterm{Reproducibility of research} signals transparency and rigour and lets later work explore similar topics with fewer resources.
-  \item Its barriers are the complexity of the work, technology change, human error, and intellectual property rights.
-  \item Good data management overcomes the technology-change and human-error barriers in particular.
-  \item \keyterm{Resource management} is awareness of the resources used, split into digital resources and methodologies.
-  \item Digital guidance favours local work over servers, local storage over cloud, downloading documents accessed often, printing only what will be read at least three times, and limiting extra screens.
-  \item Methodology guidance asks whether the desired accuracy is realistic for the resources, whether a less intensive alternative exists, and whether the sample size is justified.
+  \item \keyterm{EOP framework}: planning must consider environmental, social, cultural, and economic implications across three axes.
+  \item \keyterm{Value of research}: forecast near- and long-term cost and value; ask whether there is potential harm, whether the work can be built upon, and whether it contributes to science or industry.
+  \item \keyterm{Reproducibility}: signals transparency and rigour; barriers are complexity, technology change, human error, and IP rights — good data management mitigates the latter two (\autoref{sec:dmp}).
+  \item \keyterm{Resource management} — digital: favour local over server, local storage over cloud, download frequently accessed documents, print only what will be read three or more times.
+  \item Resource management — methodology: verify that the target accuracy is realistic, whether a less intensive alternative exists, and whether the sample size is justified against the objective (\autoref{sec:sample-types}).
 \end{itemize}
-
-\subsection{Explanation}
-The EOP framework recasts sustainability as something decided during design rather than judged after the fact, and its three axes each attach to choices made elsewhere in the course. The value axis is a forecasting duty, asking the researcher to weigh long-term benefit and potential harm before committing, which extends the gap-finding of the Week~1 literature review into a judgement about whether the gap should be filled at all. The reproducibility axis restates the credibility argument of verification and validation in resource terms, since reproducible work can be reused by others without repeating the full cost. Its four barriers are worth holding because two of them, technology change and human error, are explicitly the ones that disciplined data management is said to solve, which is why this axis points directly at Week~5.
-
-Resource management is where the framework becomes concrete, and it deliberately spans both the digital habits of daily work and the methodological choice of how to gather evidence. The digital recommendations are quantitative rules of thumb about where energy is spent, from server use to cloud storage to printing, and their shared logic is to move work and data to the least costly location that still serves the purpose. The methodology questions are the more consequential half, because they put a sustainability test on the accuracy a study aims for, asking whether the target is realistic, whether a lighter setup would do, and whether the sample size is justified. This is the same trade-off the standard error described in Week~3, now given an explicit reason to keep the sample no larger than the objective requires, since every extra test or iteration spends real resources.
 
 \section{Reading Material}
 \label{sec:reading4}
 
 \begin{partbox}
-The Week~4 reading, Conducting Sustainable Research, expands the EOP slides into a working method for making a project sustainable. It connects the value axis to literature-gap analysis and turns the reproducibility axis into a concrete set of data-management habits.
+The Week~4 reading, \textit{Conducting Sustainable Research}, expands EOP into a working method, linking the value axis to literature-gap analysis and the reproducibility axis to concrete data-management habits.
 \end{partbox}
 
 \begin{itemize}
-  \item It ties the value of research to identifying a literature gap and judging that gap on its environmental, social, cultural, and economic implications.
-  \item It recommends scripted analysis software over graphical tools to remove human error and make every repetition identical.
-  \item It asks for descriptive, self-explanatory file and variable names carrying version dates and numbers, stored in non-proprietary open formats such as text and csv.
-  \item It advises keeping an uncorrected original data file and documenting the workflow from raw data to results so an outsider can reproduce them.
-  \item It extends the server guidance to troubleshooting locally, compressing and limiting transferred files, and deleting server files once the work is done.
-  \item It frames methodology as a balance between resource use and quality, captured by garbage in equals garbage out, with sample size justified against the objective.
+  \item Tie research value to a literature gap judged on its environmental, social, cultural, and economic implications.
+  \item Use scripted analysis software over graphical tools to eliminate human error and ensure identical repetition.
+  \item Use descriptive, self-explanatory file and variable names with version dates, in non-proprietary formats (text, csv).
+  \item Keep an uncorrected original data file and document the full workflow from raw data to results.
+  \item Troubleshoot locally, compress transferred files, and delete server files once work is complete.
+  \item Garbage in equals garbage out: justify sample size against the objective.
 \end{itemize}
 
 \end{document}

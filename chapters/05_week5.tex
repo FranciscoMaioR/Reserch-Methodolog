@@ -1,5 +1,8 @@
 \documentclass[../main.tex]{subfiles}
 \begin{document}
+\setlist[itemize]{topsep=2pt,itemsep=1pt,parsep=0pt,partopsep=0pt}
+\setlist[itemize,2]{topsep=1pt,itemsep=0pt,parsep=0pt,partopsep=0pt}
+\setlength{\parskip}{3pt}
 
 \chapter{Week 5 — Data Management and Project Planning}
 \label{ch:week5}
@@ -9,58 +12,42 @@
 \section{Part 1 — The Data Management Plan}
 \label{sec:dmp}
 
-\subsection{Content}
 \begin{itemize}
-  \item The \keyterm{data management plan (DMP)} must be designed before collection, because data is very hard to organise only at the end.
-  \item Good data management stores raw data together with metadata and the analysis workflow, so the data can be understood and reused in the long term.
-  \item Section~I, \keyterm{Data Description}, lists the data type, file formats, how data is collected with source and terms of use, the purpose of processing, the storage location, and who has access.
-  \item Section~II, \keyterm{Documentation and Data Quality}, names the accompanying documentation: collection methodology, an electronic lab notebook, a README file, and a data dictionary of variables.
-  \item Section~III, \keyterm{Storage and Backup}, fixes where data and code are stored and applies the \keyterm{3-2-1 rule}: three copies, on two storage media, with one copy in a different physical location.
-  \item Section~IV, \keyterm{Legal and Ethical Requirements}, asks about confidential or classified data and about human subjects or third-party datasets from human participants.
-  \item Section~V, \keyterm{Data Sharing and Long-term Preservation}, sets what is shared, how, for example through 4TU.ResearchData, and under which license such as CC0, CC-BY, CC BY-SA, or CC BY-NC.
-  \item Section~VI, \keyterm{Data Management Responsibilities}, asks whether TU Delft leads the project and who becomes responsible for the data if you leave.
-  \item Further recommendations: use descriptive file and variable names, keep a consistent filing system, keep an uncorrected original data file, prefer open formats, and document the workflow.
+  \item The \keyterm{DMP} must be written before data collection — organising data only at the end is close to impossible.
+  \item \textbf{Section I — Data Description}: data type, file formats, collection method with source and terms of use, processing purpose, storage location, access rights.
+  \item \textbf{Section II — Documentation and Data Quality}: collection methodology, electronic lab notebook, README file, data dictionary of variables.
+  \item \textbf{Section III — Storage and Backup}: \keyterm{3-2-1 rule} — 3 copies, on 2 storage media, 1 copy in a different physical location. Design this in from the start.
+  \item \textbf{Section IV — Legal and Ethical Requirements}: confidential/classified data; human subjects or third-party datasets.
+  \item \textbf{Section V — Data Sharing and Long-term Preservation}: what is shared, how (e.g.\ 4TU.ResearchData), and under which licence (CC0, CC-BY, CC BY-SA, CC BY-NC).
+  \item \textbf{Section VI — Data Management Responsibilities}: confirm TU Delft leads the project and name who becomes responsible if you leave.
+  \item Further rules: descriptive file/variable names, consistent filing system, uncorrected original, open formats, documented workflow.
 \end{itemize}
-
-\subsection{Explanation}
-The data management plan is the point where good intentions about data become an enforced structure, and its defining feature is that it is written first. The course is explicit that organising data at the end is close to impossible, so the plan is a precondition of collection rather than a report on it. The six sections walk through the entire life of a dataset, from describing what it is, through documenting and storing it, to clearing its legal status, sharing it, and assigning responsibility for it after the project ends. Reading them as six questions makes the plan portable, since any project can be interrogated with the same list regardless of its field.
-
-Several sections deserve particular attention because they encode rules rather than prompts. The 3-2-1 rule in the storage section is a memorable backup standard, with three copies on two kinds of media and one copy kept physically elsewhere, and it is meant to be designed in from the start rather than improvised after a loss. The sharing section introduces licensing as a deliberate choice, ranging from the public-domain CC0 to the more restrictive non-commercial license, which determines how freely the data can be reused. The responsibilities section forces a question students rarely consider, namely who owns the data once they graduate, which is exactly the long-term stewardship that the Week~4 reproducibility argument and the reading's FAIR principles are concerned with.
 
 \section{Part 2 — Project Management in Research}
 \label{sec:project-mgmt}
 
-\subsection{Content}
 \begin{itemize}
-  \item Project management gives a research project organised progress, resource optimisation, early risk mitigation, and effective communication with the supervisory team.
-  \item \keyterm{Estimating tasks} starts by outlining every task, then estimating each, using comparative, parametric, or bottom-up estimating.
-  \item The \keyterm{Work Breakdown Structure (WBS)} divides the project into work packages, tasks, and sometimes sub-tasks.
-  \item The WBS is taken to a level of detail that allows a time estimate per task, and the individual estimates are summed to the project total.
-  \item \keyterm{Resource management} treats resources as people, equipment, and facilities, some reusable like people and some consumable like a plate of alloy.
-  \item Most resources are not always available and require tasks to gain access, so each task's required resources and their availability must be described.
-  \item \keyterm{Project planning} is the time-based articulation of the plan and can only be assembled once the conceptual and technical design are outlined.
-  \item The \keyterm{Gantt chart} is the common way to show the plan, and it reveals the \keyterm{critical path}, the chain that determines the shortest time to complete the project.
+  \item Project management delivers organised progress, resource optimisation, early risk mitigation, and effective supervisor communication.
+  \item \keyterm{Task estimation}: outline every task, estimate each using comparative, parametric, or bottom-up estimating.
+  \item \keyterm{Work Breakdown Structure (WBS)}: decomposes the project into work packages and tasks to the level at which each task can be estimated; estimates sum to the project total.
+  \item \keyterm{Resource management}: resources are people (reusable), equipment, and facilities (consumable). Describe required resources and their availability per task.
+  \item \keyterm{Project planning}: time-based schedule — only possible once conceptual and technical designs are complete.
+  \item \keyterm{Gantt chart}: standard schedule representation; reveals the \keyterm{critical path} — the longest dependent chain that determines the minimum project duration.
 \end{itemize}
-
-\subsection{Explanation}
-Project management is imported into research to solve a specific problem, that a research plan without structure tends to slip, and its four stated benefits are the symptoms it treats. Estimation comes first because nothing can be scheduled until its duration is known, and the three estimating methods offer different routes to that number, from comparison with past work to parametric models to summing the pieces. The Work Breakdown Structure is the tool that makes estimation possible, since decomposing the project into work packages and tasks continues until each task is small enough to estimate honestly, and the total then emerges by summing upward. This is the disciplined version of the planning step introduced in Week~2, now with a method for producing the numbers a plan needs.
-
-Resource management adds the constraint that tasks do not run on time alone, since they consume people, equipment, and facilities that are not always available. The distinction between reusable and consumable resources matters for scheduling, because a reusable resource like a person becomes a shared bottleneck across tasks while a consumable one is spent. Planning then assembles these estimates and constraints into a time-based schedule, and the course is firm that this is only possible once both the conceptual and technical designs are complete, which is the same ordering rule seen throughout the course. The Gantt chart is the standard representation, and its real value is exposing the critical path, the longest dependent chain of tasks that fixes the minimum project duration, since that chain is where any delay directly lengthens the whole project.
 
 \section{Reading Material}
 \label{sec:reading5}
 
 \begin{partbox}
-The Week~5 reading, Sustainable Data Management by Pommerening, supplies the principles behind the plan, most importantly the FAIR framework and a categorisation of research data. It explains why documentation and workflow capture are the difference between data that lasts and data that becomes unusable.
+The Week~5 reading, \textit{Sustainable Data Management} (Pommerening), supplies the principles behind the DMP, centred on the FAIR framework and a classification of research data.
 \end{partbox}
 
 \begin{itemize}
-  \item It defines \keyterm{FAIR principles} as findability, accessibility, interoperability, and reuse, with reuse as the ultimate objective that good documentation serves.
-  \item It classifies research data into five categories: observational, experimental, simulation, derived, and metadata.
-  \item Observational data is tied to time and place and irreplaceable, while experimental data is reproducible but often expensive to regenerate.
-  \item It notes that data outlives the project that created it, so preserving and sharing data is now part of the scientific process rather than an afterthought.
-  \item It warns that spreadsheet-driven analysis quickly becomes impossible to reconstruct, so an automated scripted workflow is easier to repeat and revise.
-  \item It stresses that missing documentation of metadata and workflow leaves no reproducibility, no transparency, and no possibility of reuse.
+  \item \keyterm{FAIR}: findability, accessibility, interoperability, reuse — reuse is the ultimate objective that documentation serves.
+  \item Five data categories: observational (irreplaceable, time- and place-bound), experimental (reproducible but costly), simulation, derived, and metadata.
+  \item Data outlives the project — sharing is now part of the scientific process, not an afterthought.
+  \item Spreadsheet-driven analysis is hard to reconstruct; scripted workflows are easier to repeat and revise.
+  \item Missing metadata and workflow documentation eliminates reproducibility, transparency, and reuse.
 \end{itemize}
 
 \end{document}
